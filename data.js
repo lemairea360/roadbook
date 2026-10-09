@@ -210,21 +210,13 @@ const FICHES = {
   dec:"✅ Kobo Libra Colour — ~195 € tax-free",
   ou:"Bic Camera / Yodobashi, rayon liseuses (電子書籍リーダー) — réf. : 39 960 ¥ TTC sur Bic Camera.com (9 oct.)",
   cands:[
-   {m:"Kobo Libra Colour", s:"7″ Kaleido 3 couleur · 32 Go · ~200 g · EPUB/MOBI/CBZ/CBR/PDF · IPX8 · boutons", jp:"~36 300 ¥", eur:"≈ 195 € tax-free", fr:"FR : 269,99 €", v:"Choix n°1 JP", k:"ok"},
-   {m:"Kobo Clara BW", s:"6″ N&B · 16 Go · ~174 g — même taille que nos Kindle", jpn:"prix JP à relever", fr:"FR : 169,99 €", v:"Écarté (taille)", k:"no"},
-   {m:"Kobo Clara Colour", s:"6″ Kaleido 3 · 16 Go · ~174 g — même remarque taille", jpn:"prix JP à relever", fr:"FR : 189,99 €", v:"Écarté (taille)", k:"no"},
-   {m:"Kobo Sage", s:"8″ N&B · 32 Go · 241 g · autonomie 18–20 h · modèle 2021, fin de vie probable", jpn:"~40 000 ¥ (à vérifier)", fr:"FR : 299,99 €", v:"Écarté (lourd)", k:"no"},
-   {m:"Vivlio / PocketBook InkPad 4", s:"7,8″ N&B · 32 Go · 265 g — non vendue au Japon", jpn:"achat en France", fr:"FR : ~269,99 € (souvent −20/30 € Cultura)", v:"Plan B 8″ (FR)", k:"mid"},
-   {m:"Kindle Paperwhite 7″", s:"7″ N&B · 16 Go · pas de CBZ natif, MOBI abandonné", jpn:"—", fr:"FR : ~170 €", v:"Écarté (formats)", k:"no"} ],
+   {m:"Kobo Libra Colour", s:"7″ Kaleido 3 couleur · 32 Go · ~200 g · EPUB/MOBI/CBZ/CBR/PDF · IPX8 · boutons", jp:"~36 300 ¥", eur:"≈ 195 € tax-free", fr:"FR : 269,99 €", v:"LE choix", k:"ok"} ],
   check:[
-   {id:"liseuse-taxfree", t:"Tax-free (免税) en caisse avec le passeport : −10 % (seuil 5 000 ¥ OK)"},
-   {id:"liseuse-prix", t:"Prix affiché ≤ 40 000 ¥ TTC — sinon comparer Bic / Yodobashi / Rakuten"},
-   {id:"liseuse-prise-main", t:"Test en main 1 min bras tendu : Libra Colour vs Sage (le poids compte plus que la diagonale)"},
-   {id:"liseuse-si-8pouces", t:"Si elle préfère nettement le 8″ → PAS la Sage : InkPad 4 en France au retour"},
+   {id:"liseuse-taxfree", t:"Tax-free (免税) avec passeport, prix ≤ 40 000 ¥ TTC — sinon comparer Bic / Yodobashi / Rakuten"},
    {id:"liseuse-coque", t:"Prendre une coque (SleepCover ou tierce) — la liseuse vivra dans un sac d'école"},
    {id:"liseuse-compte-fr", t:"Le soir au Wi-Fi : compte Kobo français (kobo.com/fr) → interface + boutique FR, vérifier avant de quitter le Japon"},
    {id:"liseuse-facture", t:"Garder la facture tax-free (contrôle douane possible à la sortie)"} ],
-  risk:"Garantie Kobo valable au Japon uniquement (pas de garantie légale FR 2 ans ni SAV Fnac/Darty) — risque accepté : Kobo fiables, IPX8 + coque. Chargeur USB-C, rien à adapter."
+  risk:"Garantie valable au Japon uniquement — risque accepté (Kobo fiables, IPX8 + coque). Plan B si pas achetée : Black Friday FR (~210-230 €). Étude complète : recherches/achats/liseuse.md."
  },
  montre:{
   dec:"🔸 À trancher : Coros Pace 4 (JP ~178 €) vs Garmin FR570 (FR)",
@@ -234,21 +226,14 @@ const FICHES = {
    "3 · Le look Coros « athlète » lui convient-il ? Montrer des photos Pace 4 noir/blanc + FR570 42 mm avant le départ." ],
   ou:"Coros : Step Sports / Art Sports / Bic / Yodobashi (tax-free à vérifier) · Garmin & Apple : rayon スマートウォッチ Bic / Yodobashi",
   cands:[
-   {m:"Garmin Forerunner 570 — 42 mm", s:"GPS multibande · 42 g · 10 j / 18 h GPS · piscine + eau libre · Pay, musique, appels", jp:"~61 200 ¥", eur:"≈ 330 € (risqué)", fr:"FR : 469–499 €", v:"Choix n°1 si achat FR", k:"mid"},
-   {m:"Garmin Forerunner 265S", s:"Multibande · 39 g · 15 j / 24 h GPS · Pay, musique (pas d'appels)", jpn:"prix JP à relever", fr:"FR : ~350–400 €", v:"Meilleur Q/P Garmin", k:"mid"},
-   {m:"Coros Pace 4", s:"Multibande · 32–40 g · 19 j / 41 h GPS · piscine + eau libre · notifs texte, pas de paiement", jp:"~33 000 ¥", eur:"≈ 178 € tax-free", fr:"FR : 289–300 €", v:"Choix n°1 JP", k:"ok"},
-   {m:"Garmin Venu 4 — 41 mm", s:"Multibande · 46 g acier · 10 j · ECG, lampe LED — moins orientée course", jpn:"prix JP à relever", fr:"FR : ~550 €", v:"Si look classique", k:"mid"},
-   {m:"Apple Watch Series 12 — 42 mm GPS", s:"GPS MONOfréquence · ~24 h (recharge quotidienne) · iPhone obligatoire", jp:"~65 300 ¥", eur:"≈ 353 € tax-free", fr:"FR : 449 €", v:"Plan B look", k:"mid"},
-   {m:"Apple Watch SE 3 — 40/44 mm", s:"Monofréquence · ~18–24 h · piscine · iPhone obligatoire", jp:"~38 000 ¥", eur:"≈ 205 € tax-free", fr:"FR : 269 €", v:"Écarté (GPS)", k:"no"} ],
+   {m:"Coros Pace 4", s:"Multibande · 32–40 g · 19 j / 41 h GPS · piscine + eau libre · notifs texte, pas de paiement ni musique", jp:"~33 000 ¥", eur:"≈ 178 € tax-free", fr:"FR : 289–300 €", v:"Choix n°1 si achat JP", k:"ok"},
+   {m:"Garmin Forerunner 570 — 42 mm", s:"Multibande · 42 g · 10 j / 18 h GPS · piscine + eau libre · Pay, musique, appels", jp:"~61 200 ¥", eur:"≈ 330 € (risqué : langue/garantie)", fr:"FR : 469–499 € (Black Friday visé < 450)", v:"Choix n°1 si achat FR", k:"mid"} ],
   check:[
-   {id:"montre-taxfree-shop", t:"Coros : vérifier que le magasin fait le tax-free (免税) — pas garanti dans les boutiques running"},
-   {id:"montre-coros-prix", t:"Coros Pace 4 : réf. 36 300 ¥ TTC → ~33 000 ¥ hors taxe"},
-   {id:"montre-bracelet", t:"Bracelet : nylon (32 g) ou silicone (40 g, plus pratique en piscine) — 22 mm standard, même prix"},
-   {id:"montre-langue-fr", t:"Garmin sur démo OBLIGATOIRE : Système > Langue (言語) → « Français » dans la liste, sinon NE PAS acheter"},
-   {id:"montre-garmin-42", t:"Garmin : relever le prix du 42 mm (réf. 47 mm : 67 320 ¥ TTC)"},
-   {id:"montre-aw-gps", t:"Apple Watch (plan B) : modèle GPS uniquement, pas cellulaire (garantie Apple internationale)"},
+   {id:"montre-taxfree-shop", t:"Coros : réf. 36 300 ¥ TTC (~33 000 ¥ HT) — vérifier que le magasin fait le tax-free (免税)"},
+   {id:"montre-bracelet", t:"Coros : bracelet nylon (32 g) ou silicone (40 g, mieux en piscine) — même prix"},
+   {id:"montre-langue-fr", t:"Si Garmin tentée au Japon : test démo OBLIGATOIRE — Système > Langue (言語) → « Français », sinon NE PAS acheter"},
    {id:"montre-facture", t:"Garder la facture tax-free (douane à la sortie)"} ],
-  risk:"Garmin achetée au Japon : garantie régionale + langue FR non garantie (versions APAC) → test 言語 obligatoire sur la démo. Coros : firmware mondial, français inclus, risques faibles."
+  risk:"Coros : firmware mondial, français inclus, risques faibles. Garmin au Japon : garantie régionale + langue non garantie. Autres candidats écartés (265S, Venu 4, Apple Watch) : recherches/achats/montre.md."
  }
 };
 const CODES = [
