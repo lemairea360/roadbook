@@ -1,6 +1,6 @@
 # Compagnon de voyage — Japon 2026 📱
 
-PWA single-file (zéro framework, données embarquées) : itinéraire jour par jour, codes de réservation, numéros utiles — **100 % hors-ligne** une fois installée.
+PWA statique (zéro framework, zéro build — UI dans `index.html`, données dans `data.js`) : itinéraire jour par jour, codes de réservation, numéros utiles — **100 % hors-ligne** une fois installée.
 
 4 onglets : **Aujourd'hui** (fiche du jour : alertes, chips pratiques, logement + lien résa, programme, menu du jour interactif), **Voyage** (liste des 24 jours), **Achats** (convertisseur ¥→€, fiches d'achat dépliables liseuse/montre issues de `recherches/achats/`, liste cochable), **Infos** (codes de résa, téléphones, rappels). États persistants en localStorage : `roadbook-done-v1` (menu « fait »), `roadbook-achats-v1` (achats cochés), `roadbook-achats-check-v1` (checklists magasin + taux ¥/€).
 
@@ -10,10 +10,13 @@ PWA single-file (zéro framework, données embarquées) : itinéraire jour par j
 
 | Fichier | Rôle |
 |---|---|
-| `index.html` | L'app complète (HTML + CSS + JS + données) |
-| `valises.html` | Checklist valises (page séparée, état en localStorage `valises-v1`) |
+| `index.html` | L'app (HTML + CSS + JS applicatif — **sans** données) |
+| `data.js` | **Toutes les données du voyage** (SLEEPS, DAYS, MENUS, ACHATS, CODES, INFOS…) — seul fichier à éditer en voyage, voir `GUIDE.md` |
+| `verifie-data.js` | Vérifie `data.js` avant un push : `node verifie-data.js` |
+| `GUIDE.md` | Mode d'emploi d'édition pour une session Claude Code sans contexte |
+| `valises.html` | Checklist valises (page séparée, données incluses, état en localStorage `valises-v1`) |
 | `manifest.webmanifest` | Manifeste PWA (nom, icônes, mode standalone) |
-| `sw.js` | Service worker cache-first (hors-ligne). ⚠️ Après toute modif des données, **incrémenter `VERSION`** dedans pour forcer la mise à jour |
+| `sw.js` | Service worker **stale-while-revalidate** (hors-ligne garanti + mises à jour auto au lancement suivant). `VERSION` à incrémenter seulement en cas de refonte (liste de fichiers) |
 | `icon-512.png` / `apple-touch-icon.png` | Icônes (vermillon, glyphe 日) |
 | `gen_icons.py` | Régénère les icônes : `python3 gen_icons.py` (stdlib uniquement) |
 
@@ -53,6 +56,10 @@ Deux options gratuites, HTTPS, zéro maintenance. **Décision Antoine requise :*
 
 **Dans les deux cas** : la page reste techniquement accessible publiquement — elle contient codes de résa, adresses et wifi, mais ni carte bancaire ni passeport. Alternative zéro exposition : AirDrop du dossier + ouverture locale… mais sans HTTPS, pas de vraie PWA hors-ligne. À arbitrer.
 
+## Modifier pendant le voyage
+
+Mode d'emploi complet : **`GUIDE.md`**. Le flow : ouvrir une session Claude Code (mobile) sur ce repo → modifier **`data.js` uniquement** (programme, alertes, codes, menus…) → valider (`node --check data.js` + `node verifie-data.js`) → `git push` sur `main`. GitHub Pages redéploie (~1 min) et, grâce au service worker stale-while-revalidate, les téléphones récupèrent la mise à jour à leur prochain lancement avec réseau (visible au lancement suivant) — sans toucher `VERSION`.
+
 ## Sources des données
 
-Tout vient du vault : `itineraire/reservations.md` (source de vérité), `itineraire/carnet-voyage.md`, `etapes/01-kansai.md`, `etapes/02-road-trip.md`, `etapes/03-tokyo.md`. En cas de divergence, le vault a raison → corriger `index.html` puis incrémenter `VERSION` dans `sw.js`.
+Tout vient du vault : `itineraire/reservations.md` (source de vérité), `itineraire/carnet-voyage.md`, `etapes/01-kansai.md`, `etapes/02-road-trip.md`, `etapes/03-tokyo.md`. En cas de divergence, le vault a raison → corriger `data.js` (voir `GUIDE.md`).

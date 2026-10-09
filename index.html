@@ -172,258 +172,11 @@
 </nav>
 <div class="toast" id="toast">Copié ✓</div>
 
+<script src="./data.js"></script>
 <script>
-// ———————————————————————— DONNÉES (générées depuis le vault Obsidian) ————————————————————————
-// ⚠️ Sécurité : ne JAMAIS mettre de token/bypass (bypass_token, code=, clé d'API…) dans ce fichier :
-// il sera hébergé publiquement. Les liens de résa doivent exiger un login (Airbnb/Booking) ou être omis.
-const SLEEPS = {
-  kyoto:{ name:"Airbnb RESI STAY « GION room »", area:"Gion / Higashiyama, Kyoto", code:"HMFWCZNFCN",
-    resa:"https://www.airbnb.fr/trips/v1/1726258674668074037/ro/RESERVATION2_CHECKIN/HMFWCZNFCN",
-    addr:"246 Yakushi-cho, Matsubara sagaru Nichome, Yamato-Oji Street, Higashiyama-ku, Kyoto 605-0814", color:"#c43d2f",
-    meta:"Check-in 15h (instructions la veille) · check-out 11h" },
-  ena:{ name:"« Slow down » chez Aya & Fabrizzio", area:"Nakanohō, Ena", code:"HMCNFT5PBD",
-    resa:"https://www.airbnb.fr/trips/v1/1741534927088063733/ro/RESERVATION2_CHECKIN/HMCNFT5PBD",
-    addr:"3960 Nakanohōchō, Ena, Gifu 509-8231", color:"#7d9a4f",
-    meta:"Arrivée après 15h, accueil en personne (prévenir !) · chat Tora 🐈" },
-  tsuruya:{ name:"Ryokan Tsuruya ♨️", area:"Shirahone Onsen", code:"T9570D4453533", tel:"0263932331",
-    // pas de lien resa : l'URL tripla contenait un bypass_token (accès direct sans login) → le tél suffit
-    addr:"Tsuruya, 4202-6 Azumi, Matsumoto, Nagano", color:"#8a5fa0",
-    meta:"Check-in 15h — AVANT 18H (dîner) · demi-pension · taxe ¥150/pers cash" },
-  varie:{ name:"Glamping Resort Varie ⛺", area:"Fujikawaguchiko", code:"Booking 169 €", tel:"05053695536",
-    resa:"https://secure.booking.com/mytrips.html",
-    addr:"Glamping Resort Varie, 5527-1 Funatsu, Fujikawaguchiko, Yamanashi 401-0301", color:"#3f8fa8",
-    meta:"Dôme vue Fuji · sanitaires dehors → pyjamas chauds + frontale" },
-  hakone:{ name:"Villa GranGiorno ♨️ onsen privé", area:"Kowakudani, Hakone", code:"HMZ88PZJ33",
-    resa:"https://www.airbnb.fr/trips/v1/1744301552045964594/ro/RESERVATION2_CHECKIN/HMZ88PZJ33",
-    addr:"443-155 Kowakudani, Hakone, Kanagawa 250-0406", color:"#b3560e",
-    meta:"Check-in 16h (boîte à clé, code la veille) · bagages dès 12h si prévenus" },
-  izu:{ name:"« Kiraboshi no sato » 🏠", area:"Izu-kōgen, Itō", code:"HM2P3BHZ4Y", tel:"05017203760",
-    resa:"https://www.airbnb.fr/trips/v1/1744324830313001327/ro/RESERVATION2_CHECKIN/HM2P3BHZ4Y",
-    addr:"Kiraboshi no sato, 2-339 Ito, Shizuoka 413-0231", color:"#2e7d4f",
-    meta:"Self check-in 16h (instructions 2 j avant) · BBQ + cheminée" },
-  tokyo:{ name:"THS House (Toshiko)", area:"Ikenohata, Ueno/Nezu", code:"HMB8ADK8TP",
-    resa:"https://www.airbnb.fr/trips/v1/1724443097169362231/ro/RESERVATION2_CHECKIN/HMB8ADK8TP",
-    addr:"3-chōme-2-12 Ikenohata, Taito City, Tokyo 110-0008", color:"#30557d",
-    meta:"Boîte à clé (PIN la veille) · check-in 15h · wifi THS5911 / 12ry4in6" },
-  avion:{ name:"Nuit dans l'avion ✈️", area:"", code:"", addr:"", color:"#777",
-    meta:"" }
-};
-// Chips « pratique aujourd'hui » (champ prat des jours) : copy = copie au tap, tel = appel.
-const WIFI_TOKYO = {t:"📶 Wifi 12ry4in6", copy:"12ry4in6"};
-// PNR avion encodés (base64) : un PNR + nom de famille suffit à gérer un vol → on évite le texte en clair dans un repo public.
-const PNR_A=atob("RU9HSkNK"), PNR_R=atob("RU9TOEtO"), CONF_A=atob("UFhXOEhC"), CONF_R=atob("TkoxSFhF");
-const DAYS = [
- {d:"2026-10-13", t:"Décollage de Genève", ph:"Vol", sleep:"avion",
-  prat:[{t:"✈️ "+PNR_A, copy:PNR_A}],
-  alerts:["Aéroport GVA à 10h30 (vol 13:20) — QR Visit Japan Web hors-ligne ×4"],
-  plan:[{w:"13:20",x:"CA862 GVA → Pékin (10h05 de vol)"},{w:"nuit",x:"Arrivée PEK 05:25, correspondance 3h15"}]},
- {d:"2026-10-14", t:"Arrivée au Japon → Kyoto", ph:"Kyoto", sleep:"kyoto",
-  prat:[{t:"✈️ "+PNR_A, copy:PNR_A}],
-  plan:[{w:"08:40",x:"CA927 Pékin → Osaka KIX (arrivée 12:40)"},
-        {w:"aprèm",x:"Immigration (QR) + train Haruka → Kyoto (~80 min)", maps:"Kyoto Station"},
-        {w:"soir",x:"Check-in, repas simple dans Gion, coucher tôt (décalage)"}],
-  alerts:["Instructions self check-in reçues la veille sur Airbnb (plan B : comptoir RESI STAY près de la gare)"]},
- {d:"2026-10-15", t:"Kyoto — jour 1", ph:"Kyoto", sleep:"kyoto", menu:true},
- {d:"2026-10-16", t:"Kyoto — jour 2", ph:"Kyoto", sleep:"kyoto", menu:true,
-  alerts:["Nara idéale en semaine (jeu/ven) — moins de monde chez les daims"]},
- {d:"2026-10-17", t:"Kyoto — jour 3 (samedi : foules)", ph:"Kyoto", sleep:"kyoto", menu:true,
-  alerts:["Samedi : viser quartier maison / Nishiki / musées, pas les gros sites"]},
- {d:"2026-10-18", t:"Kyoto — jour 4", ph:"Kyoto", sleep:"kyoto", menu:true,
-  alerts:["Dimanche : Fushimi Inari possible mais à l'aube (sur place 7h30-8h)"]},
- {d:"2026-10-19", t:"Kyoto — jour 5 + préparatifs", ph:"Kyoto", sleep:"kyoto", menu:true,
-  alerts:["Ce soir : cash ¥, onigiri pour le trek de mercredi, valises réorganisées pour la voiture"]},
- {d:"2026-10-20", t:"Nagoya → Ena · la voiture !", ph:"Road trip", sleep:"ena",
-  prat:[{t:"🚗 RC52461258775729685", copy:"RC52461258775729685"},{t:"☎ Agence Nagoya", tel:"0524520100"}],
-  alerts:["Résa Toyota = 9h00 : si arrivée ~10h45, PRÉVENIR l'agence (052-452-0100) — retard non prévenu = résa annulable",
-          "Agence Toyota : payer ¥152 130 au comptoir — Revolut + permis + traduction JAF + passeport",
-          "Prévenir Aya & Fabrizzio de l'heure d'arrivée (message Airbnb)"],
-  plan:[{w:"matin",x:"Shinkansen Kyoto → Nagoya (35 min) · 10h45 agence Toyota, sortie Taiko-dori", maps:"Toyota Rent a Car Nagoya Shinkansen Exit"},
-        {w:"aprèm",x:"Au choix : Science Museum (planétarium géant) OU Magome au couchant", maps:"Nagoya City Science Museum"},
-        {w:"17:00",x:"Check-in Ena (sortie Ena IC puis rte 68, 25 min)", maps:"3960 Nakanohōchō Ena"}]},
- {d:"2026-10-21", t:"Trek Nakasendo → ryokan", ph:"Road trip", sleep:"tsuruya",
-  alerts:["ARRIVER AU TSURUYA AVANT 18H (dîner kaiseki)","Taxe onsen ¥600 en espèces","Sacs anti-nausée (derniers km sinueux) 🤢"],
-  plan:[{w:"08:15",x:"Route → parking Tsumago (~¥500), bus ~9h vers Magome", maps:"Tsumago parking"},
-        {w:"09:40",x:"Marche Magome → Tsumago · 8 km · ~3h 🥾", maps:"Magome-juku"},
-        {w:"13:00",x:"Soba à Tsumago, flânerie"},
-        {w:"14:30",x:"Route → Shirahone Onsen (1h52)", maps:"Tsuruya Shirahone Onsen"},
-        {w:"16:30",x:"Onsen laiteux 🤍 puis dîner kaiseki bœuf Shinshu × Hida"}]},
- {d:"2026-10-22", t:"Château de Matsumoto → glamping", ph:"Road trip", sleep:"varie",
-  plan:[{w:"matin",x:"Onsen + petit-déj ryokan · 9h15 route (59 min)"},
-        {w:"10:30",x:"Château de Matsumoto 🏯 (~1h30) + déjeuner rue Nakamachi", maps:"Matsumoto Castle"},
-        {w:"13:00",x:"Route 1h55 · pause possible Oshino Hakkai", maps:"Oshino Hakkai"},
-        {w:"15:30",x:"Lac Kawaguchi + télésiège Kachi-Kachi 🗻", maps:"Kachi Kachi Ropeway"},
-        {w:"17:00",x:"Check-in dôme · BBQ si commandé · ciel étoilé ✨"}]},
- {d:"2026-10-23", t:"(Chureito) → Gotemba → Hakone", ph:"Road trip", sleep:"hakone",
-  alerts:["COURSES À GOTEMBA pour 2 jours (quasi rien à Hakone)","Docs de la villa à télécharger AVANT (réseau faible)"],
-  plan:[{w:"07:30",x:"Si ciel dégagé : pagode Chureito (400 marches, LA photo)", maps:"Chureito Pagoda"},
-        {w:"11:00",x:"Courses + déjeuner à Gotemba", maps:"Gotemba supermarket"},
-        {w:"14:00",x:"Téléphérique Owakudani (œufs noirs 🥚)", maps:"Owakudani"},
-        {w:"16:00",x:"Check-in villa → onsen privé 24h/24 🎉", maps:"443-155 Kowakudani Hakone"}]},
- {d:"2026-10-24", t:"Hakone : art & barbotage", ph:"Road trip", sleep:"hakone",
-  plan:[{w:"09:00",x:"Open-Air Museum à l'ouverture (Woods of Net, bain de pieds)", maps:"Hakone Open-Air Museum"},
-        {w:"14:00",x:"Yunessun : onsen en maillot (bains café, thé, vin)", maps:"Hakone Kowakien Yunessun"},
-        {w:"soir",x:"BBQ à la villa (si demandé) + onsen privé"}]},
- {d:"2026-10-25", t:"Skywalk → péninsule d'Izu", ph:"Road trip", sleep:"izu",
-  alerts:["Décision météo du matin : Izu Skyline si ciel clair, sinon côte R135"],
-  plan:[{w:"09:00",x:"Mishima Skywalk : pont suspendu + tyrolienne 🌉", maps:"Mishima Skywalk"},
-        {w:"12:30",x:"Déjeuner unagi à Mishima"},
-        {w:"14:00",x:"Izu Skyline (si beau) ou côte est", maps:"Izu Skyline"},
-        {w:"16:00",x:"Check-in Kiraboshi no sato · plage si timing OK", maps:"Kiraboshi no sato Ito"}]},
- {d:"2026-10-26", t:"Izu : falaises, volcan, capybaras", ph:"Road trip", sleep:"izu",
-  plan:[{w:"09:00",x:"Jōgasaki Coast : falaises + pont suspendu", maps:"Jogasaki Coast"},
-        {w:"11:00",x:"Mont Ōmuro : télésiège + tour du cratère", maps:"Mount Omuro"},
-        {w:"14:00",x:"Shaboten Zoo : nourrir les capybaras 🦫", maps:"Izu Shaboten Zoo"},
-        {w:"16:30",x:"Plage ou cheminée à la maison"}]},
- {d:"2026-10-27", t:"Izu : cascades & plage", ph:"Road trip", sleep:"izu",
-  plan:[{w:"09:00",x:"Kawazu Nanadaru : 7 cascades + glace au wasabi 💦", maps:"Kawazu Nanadaru"},
-        {w:"14:00",x:"Plage (Usami ou Izu-kōgen) — châteaux de sable", maps:"Usami beach"},
-        {w:"soir",x:"Dernière nuit du road trip, onsen"}]},
- {d:"2026-10-28", t:"Izu → Tokyo · fin du road trip", ph:"Road trip", sleep:"tokyo",
-  prat:[{t:"🚗 Map Code 647594*83", copy:"647594*83"},{t:"☎ Agence Nihonbashi", tel:"0352202220"}, WIFI_TOKYO],
-  alerts:["Dépose famille + valises ~13h à l'Airbnb (à confirmer avec Toshiko, sinon casiers Ueno)",
-          "Voiture rendue AVANT 15H — Map Code 647594*83, entrée parking « SHANGRILAHOTEL »"],
-  plan:[{w:"10:00",x:"Check-out → route ~3h (R135 → Tōmei → Shuto)"},
-        {w:"13:00",x:"Dépose Ikenohata, puis Antoine : essence + restitution Nihonbashi", maps:"Marunouchi Trust Tower parking"},
-        {w:"14:30",x:"Retour Ginza Line Nihombashi → Ueno (~10 min)"},
-        {w:"aprèm",x:"Parc d'Ueno en douceur, repérage Nezu"}]},
- {d:"2026-10-29", t:"Tokyo — jour 1", ph:"Tokyo", sleep:"tokyo", menu:true, prat:[WIFI_TOKYO],
-  alerts:["Ghibli ou DisneySea selon billets (overlay Halloween jusqu'au 31)"]},
- {d:"2026-10-30", t:"Tokyo — jour 2", ph:"Tokyo", sleep:"tokyo", menu:true, prat:[WIFI_TOKYO],
-  alerts:["Dernier bon jour DisneySea Halloween (overlay finit sam 31) — billets datés en ligne dès que le jour est choisi"]},
- {d:"2026-10-31", t:"Tokyo — Halloween 🎃", ph:"Tokyo", sleep:"tokyo", menu:true, prat:[WIFI_TOKYO],
-  alerts:["Éviter Shibuya le soir (foule Halloween)"]},
- {d:"2026-11-01", t:"Tokyo — jour 4 (Kamakura ?)", ph:"Tokyo", sleep:"tokyo", menu:true, prat:[WIFI_TOKYO]},
- {d:"2026-11-02", t:"Tokyo — jour 5", ph:"Tokyo", sleep:"tokyo", menu:true, prat:[WIFI_TOKYO]},
- {d:"2026-11-03", t:"Tokyo — Culture Day (férié !)", ph:"Tokyo", sleep:"tokyo", menu:true, prat:[WIFI_TOKYO],
-  alerts:["Férié national : foules partout → plan quartier ou résa en poche"]},
- {d:"2026-11-04", t:"Tokyo — dernier jour plein", ph:"Tokyo", sleep:"tokyo", menu:true, prat:[WIFI_TOKYO],
-  alerts:["Pré-pliage des valises, derniers achats (musée Ghibli fermé dès aujourd'hui)"]},
- {d:"2026-11-05", t:"Dernier jour → vol retour", ph:"Vol", sleep:"avion",
-  prat:[{t:"✈️ "+PNR_R, copy:PNR_R}, WIFI_TOKYO],
-  alerts:["Check-out 10h — bagages chez Toshiko si OK, sinon consigne Ueno","Départ vers Haneda T3 à 17h max"],
-  plan:[{w:"matin",x:"Ueno / Ameyoko en douceur, derniers souvenirs", maps:"Ameyoko"},
-        {w:"17:00",x:"→ Haneda T3 (taxi van ou Keisei+monorail, ~40 min)", maps:"Haneda Airport Terminal 3"},
-        {w:"21:00",x:"CA422 → Pékin puis CA861 → Genève (arrivée ven 07:05)"}]}
-];
-// id = clé stable pour l'état « fait » (roadbook-done-v1) ; d = logistique (source : etapes/01-kansai.md & 03-tokyo.md).
-const MENUS = {
-  "Kyoto":[
-    {id:"nara", e:"🦌", x:"Nara : daims + Grand Bouddha + mochi pilés (journée, idéal en semaine)",
-      d:"Train direct ~45 min depuis Kyoto. Daims + crackers (gros hit), Tōdai-ji, mochi pilés en spectacle chez Nakatanidou. Idéal en semaine (jeu/ven).", maps:"Nara Park"},
-    {id:"arashiyama", e:"🎋", x:"Arashiyama : bambous avant 9h + singes d'Iwatayama + rivière (journée)",
-      d:"Bambous AVANT 9h, puis singes d'Iwatayama (montée 20 min, singes en liberté — notre « plan singes »), pont Togetsukyō, barques, glaces.", maps:"Arashiyama Bamboo Grove"},
-    {id:"fushimi", e:"⛩️", x:"Fushimi Inari TÔT (7h30) jusqu'au belvédère Yotsutsuji (½ j)",
-      d:"Partir TÔT : sur place 7h30-8h. Monter jusqu'au belvédère Yotsutsuji suffit. Combinable avec Tōfuku-ji ou retour par Nishiki.", maps:"Fushimi Inari Taisha"},
-    {id:"maison", e:"🏮", x:"Quartier maison : Kiyomizu-dera tôt + Sannenzaka + Gion (½ j, à pied)",
-      d:"Tout à pied depuis l'Airbnb. Kiyomizu-dera à l'ouverture + ruelles Sannenzaka/Ninenzaka + Gion. Option yukata pour les filles.", maps:"Kiyomizu-dera"},
-    {id:"kinkakuji", e:"✨", x:"Kinkaku-ji (pavillon d'or) + Ryōan-ji (jardin zen) — beau mais foule (½ j)",
-      d:"Bus (¥230/trajet, IC card). Beau mais foule ; combinable Ryōan-ji (jardin zen).", maps:"Kinkaku-ji"},
-    {id:"nishiki", e:"🍡", x:"Nishiki Market + Teramachi — goûter en marchant (pluie OK)",
-      d:"Goûter en marchant, pluie-compatible.", maps:"Nishiki Market"},
-    {id:"pluie", e:"🚂", x:"Plan B pluie : Railway Museum ou aquarium",
-      d:"Plans B pluie parfaits, à côté de la gare de Kyoto.", maps:"Kyoto Railway Museum"} ],
-  "Tokyo":[
-    {id:"ghibli", e:"🎬", x:"Musée Ghibli (si billets) + Inokashira Park (½ j)",
-      d:"Mitaka. ⚠️ Billets nominatifs, le cousin entre avec nous ; musée fermé dès le 4/11. ½ journée + Inokashira Park à côté.", maps:"Ghibli Museum Mitaka"},
-    {id:"disneysea", e:"🎢", x:"DisneySea — journée entière (billets datés)",
-      d:"Journée entière. Billets datés à acheter en ligne dès que le jour est fixé. Overlay Halloween jusqu'au sam 31/10 → viser jeu 29 ou ven 30.", maps:"Tokyo DisneySea"},
-    {id:"teamlab", e:"💧", x:"TeamLab Planets (réserver créneau) (½ j)",
-      d:"Pieds dans l'eau, immersif — réserver un créneau en ligne dès que les jours sont fixés. ½ journée.", maps:"teamLab Planets Tokyo"},
-    {id:"asakusa", e:"🏮", x:"Asakusa tôt + croisière Sumida (½ j)",
-      d:"Senso-ji + Nakamise tôt le matin ; combinable croisière Sumida → Odaiba.", maps:"Senso-ji"},
-    {id:"ueno", e:"🐼", x:"Ueno : zoo + musée des sciences (à 10 min à pied !)",
-      d:"À 10 min à pied de la maison — zoo (pandas) + musée national des sciences. Parfait jour de récup.", maps:"Ueno Zoo"},
-    {id:"shibuya", e:"🗼", x:"Shibuya + Harajuku (crêpes Takeshita) + Meiji-jingū (journée)",
-      d:"Scramble & Hachikō, Takeshita-dōri (crêpes = hit filles), Meiji-jingū pour souffler. Journée.", maps:"Shibuya Scramble Crossing"},
-    {id:"pokemon", e:"⚡", x:"Pokémon Center + café à thème (résa)",
-      d:"Shibuya ou Ikebukuro. Pokémon Café = résa en ligne tôt.", maps:"Pokemon Center Shibuya"},
-    {id:"kamakura", e:"🚃", x:"Day trip Kamakura : Grand Bouddha + Enoden + plage (journée)",
-      d:"~1h de train. Grand Bouddha, petit train Enoden, plage. Bon dimanche 01/11.", maps:"Kamakura Great Buddha"},
-    {id:"yokohama", e:"🍜", x:"Yokohama Cup Noodles Museum — fabriquer son ramen (½ j)",
-      d:"~40 min. Fabriquer son propre cup ramen — réserver l'atelier.", maps:"Cup Noodles Museum Yokohama"},
-    {id:"shinjuku", e:"🌆", x:"Shinjuku le soir : vue gratuite du Metropolitan Government Building",
-      d:"Le soir — vue gratuite depuis le Metropolitan Government Building.", maps:"Tokyo Metropolitan Government Building"} ]
-};
-const ACHATS = [
-  {id:"liseuse", t:"Liseuse", who:"pour notre fille (9 ans)"},   // fiche détaillée → FICHES.liseuse
-  {id:"montre", t:"Montre sport", who:"pour Emilie"},            // fiche détaillée → FICHES.montre
-  {id:"switch", t:"Nintendo Switch", where:"Bic Camera / Yodobashi", note:"prix Japon intéressants · ⚠️ acheter avant le 31/10 pour la détaxe immédiate"},
-  {id:"airpodsmax", t:"AirPods Max", note:"🔸 comparer prix détaxé vs FR"},
-  {id:"souvenirs", t:"Souvenirs filles", who:"les filles", where:"Pokémon Center, Ghibli"},
-  {id:"the", t:"Thé / papeterie", note:"à définir"},
-];
-// Fiches d'achat — source : recherches/achats/liseuse.md & montre.md (relevés du 9 oct. 2026, 1 € ≈ 185 ¥).
-// jp = prix JP tax-free (affiché en gros), jpn = remplaçant quand pas de prix JP, fr = prix France.
-const FICHES = {
- liseuse:{
-  dec:"✅ Kobo Libra Colour — ~195 € tax-free",
-  ou:"Bic Camera / Yodobashi, rayon liseuses (電子書籍リーダー) — réf. : 39 960 ¥ TTC sur Bic Camera.com (9 oct.)",
-  cands:[
-   {m:"Kobo Libra Colour", s:"7″ Kaleido 3 couleur · 32 Go · ~200 g · EPUB/MOBI/CBZ/CBR/PDF · IPX8 · boutons", jp:"~36 300 ¥", eur:"≈ 195 € tax-free", fr:"FR : 269,99 €", v:"Choix n°1 JP", k:"ok"},
-   {m:"Kobo Clara BW", s:"6″ N&B · 16 Go · ~174 g — même taille que nos Kindle", jpn:"prix JP à relever", fr:"FR : 169,99 €", v:"Écarté (taille)", k:"no"},
-   {m:"Kobo Clara Colour", s:"6″ Kaleido 3 · 16 Go · ~174 g — même remarque taille", jpn:"prix JP à relever", fr:"FR : 189,99 €", v:"Écarté (taille)", k:"no"},
-   {m:"Kobo Sage", s:"8″ N&B · 32 Go · 241 g · autonomie 18–20 h · modèle 2021, fin de vie probable", jpn:"~40 000 ¥ (à vérifier)", fr:"FR : 299,99 €", v:"Écarté (lourd)", k:"no"},
-   {m:"Vivlio / PocketBook InkPad 4", s:"7,8″ N&B · 32 Go · 265 g — non vendue au Japon", jpn:"achat en France", fr:"FR : ~269,99 € (souvent −20/30 € Cultura)", v:"Plan B 8″ (FR)", k:"mid"},
-   {m:"Kindle Paperwhite 7″", s:"7″ N&B · 16 Go · pas de CBZ natif, MOBI abandonné", jpn:"—", fr:"FR : ~170 €", v:"Écarté (formats)", k:"no"} ],
-  check:[
-   {id:"liseuse-taxfree", t:"Tax-free (免税) en caisse avec le passeport : −10 % (seuil 5 000 ¥ OK)"},
-   {id:"liseuse-prix", t:"Prix affiché ≤ 40 000 ¥ TTC — sinon comparer Bic / Yodobashi / Rakuten"},
-   {id:"liseuse-prise-main", t:"Test en main 1 min bras tendu : Libra Colour vs Sage (le poids compte plus que la diagonale)"},
-   {id:"liseuse-si-8pouces", t:"Si elle préfère nettement le 8″ → PAS la Sage : InkPad 4 en France au retour"},
-   {id:"liseuse-coque", t:"Prendre une coque (SleepCover ou tierce) — la liseuse vivra dans un sac d'école"},
-   {id:"liseuse-compte-fr", t:"Le soir au Wi-Fi : compte Kobo français (kobo.com/fr) → interface + boutique FR, vérifier avant de quitter le Japon"},
-   {id:"liseuse-facture", t:"Garder la facture tax-free (contrôle douane possible à la sortie)"} ],
-  risk:"Garantie Kobo valable au Japon uniquement (pas de garantie légale FR 2 ans ni SAV Fnac/Darty) — risque accepté : Kobo fiables, IPX8 + coque. Chargeur USB-C, rien à adapter."
- },
- montre:{
-  dec:"🔸 À trancher : Coros Pace 4 (JP ~178 €) vs Garmin FR570 (FR)",
-  arb:[
-   "1 · Historique Garmin Connect important ? Oui → FR570 42 mm en France (Black Friday, visée < 450 €). Non → Coros Pace 4 au Japon (~178 €, économie > 100 €, Strava se reconnecte).",
-   "2 · Paiement avec la montre / musique en streaming ? Oui → Garmin (la Coros n'a ni l'un ni l'autre).",
-   "3 · Le look Coros « athlète » lui convient-il ? Montrer des photos Pace 4 noir/blanc + FR570 42 mm avant le départ." ],
-  ou:"Coros : Step Sports / Art Sports / Bic / Yodobashi (tax-free à vérifier) · Garmin & Apple : rayon スマートウォッチ Bic / Yodobashi",
-  cands:[
-   {m:"Garmin Forerunner 570 — 42 mm", s:"GPS multibande · 42 g · 10 j / 18 h GPS · piscine + eau libre · Pay, musique, appels", jp:"~61 200 ¥", eur:"≈ 330 € (risqué)", fr:"FR : 469–499 €", v:"Choix n°1 si achat FR", k:"mid"},
-   {m:"Garmin Forerunner 265S", s:"Multibande · 39 g · 15 j / 24 h GPS · Pay, musique (pas d'appels)", jpn:"prix JP à relever", fr:"FR : ~350–400 €", v:"Meilleur Q/P Garmin", k:"mid"},
-   {m:"Coros Pace 4", s:"Multibande · 32–40 g · 19 j / 41 h GPS · piscine + eau libre · notifs texte, pas de paiement", jp:"~33 000 ¥", eur:"≈ 178 € tax-free", fr:"FR : 289–300 €", v:"Choix n°1 JP", k:"ok"},
-   {m:"Garmin Venu 4 — 41 mm", s:"Multibande · 46 g acier · 10 j · ECG, lampe LED — moins orientée course", jpn:"prix JP à relever", fr:"FR : ~550 €", v:"Si look classique", k:"mid"},
-   {m:"Apple Watch Series 12 — 42 mm GPS", s:"GPS MONOfréquence · ~24 h (recharge quotidienne) · iPhone obligatoire", jp:"~65 300 ¥", eur:"≈ 353 € tax-free", fr:"FR : 449 €", v:"Plan B look", k:"mid"},
-   {m:"Apple Watch SE 3 — 40/44 mm", s:"Monofréquence · ~18–24 h · piscine · iPhone obligatoire", jp:"~38 000 ¥", eur:"≈ 205 € tax-free", fr:"FR : 269 €", v:"Écarté (GPS)", k:"no"} ],
-  check:[
-   {id:"montre-taxfree-shop", t:"Coros : vérifier que le magasin fait le tax-free (免税) — pas garanti dans les boutiques running"},
-   {id:"montre-coros-prix", t:"Coros Pace 4 : réf. 36 300 ¥ TTC → ~33 000 ¥ hors taxe"},
-   {id:"montre-bracelet", t:"Bracelet : nylon (32 g) ou silicone (40 g, plus pratique en piscine) — 22 mm standard, même prix"},
-   {id:"montre-langue-fr", t:"Garmin sur démo OBLIGATOIRE : Système > Langue (言語) → « Français » dans la liste, sinon NE PAS acheter"},
-   {id:"montre-garmin-42", t:"Garmin : relever le prix du 42 mm (réf. 47 mm : 67 320 ¥ TTC)"},
-   {id:"montre-aw-gps", t:"Apple Watch (plan B) : modèle GPS uniquement, pas cellulaire (garantie Apple internationale)"},
-   {id:"montre-facture", t:"Garder la facture tax-free (douane à la sortie)"} ],
-  risk:"Garmin achetée au Japon : garantie régionale + langue FR non garantie (versions APAC) → test 言語 obligatoire sur la démo. Coros : firmware mondial, français inclus, risques faibles."
- }
-};
-const CODES = [
-  {k:"✈️ Vol aller · mar 13/10 13:20 GVA→KIX", s:"Air China (conf. "+CONF_A+")", v:PNR_A},
-  {k:"✈️ Vol retour · jeu 05/11 21:00 HND→GVA", s:"Air China (conf. "+CONF_R+")", v:PNR_R},
-  {k:"🚗 Voiture Toyota 20→28/10", s:"clé eXJTMZ7U · ¥152 130 au comptoir", v:"RC52461258775729685"},
-  {k:"🏠 Kyoto 14→20/10", s:"Airbnb RESI STAY", v:"HMFWCZNFCN"},
-  {k:"🏠 Ena 20→21/10", s:"Airbnb Aya & Fabrizzio", v:"HMCNFT5PBD"},
-  {k:"♨️ Tsuruya 21→22/10", s:"tripla · ☎ 0263-93-2331", v:"T9570D4453533"},
-  {k:"⛺ Varie 22→23/10", s:"Booking · n° 🔸 à récupérer (email perso) · ☎ 050-5369-5536", v:"—"},
-  {k:"🏠 Hakone 23→25/10", s:"Airbnb GranGiorno", v:"HMZ88PZJ33"},
-  {k:"🏠 Izu 25→28/10", s:"Airbnb · ☎ 050-1720-3760", v:"HM2P3BHZ4Y"},
-  {k:"🏠 Tokyo 28/10→05/11", s:"Airbnb Toshiko", v:"HMB8ADK8TP"},
-  {k:"📶 Wifi Tokyo", s:"THS House", v:"THS5911 / 12ry4in6"},
-  {k:"🅿️ Map Code restitution voiture", s:"Trust Tower B2 « SHANGRILAHOTEL »", v:"647594*83"},
-];
-const INFOS = [
-  {h:"🚨 Urgences", rows:[["Police","110"],["Pompiers / SAMU","119"],["Ambassade de France (Tokyo)","+81357986000"]]},
-  {h:"🚗 Voiture Toyota", rows:[["Agence Nagoya (prise 20/10 9h)","0524520100"],["Agence Nihonbashi (retour 28/10 <15h)","0352202220"],["Centre de résa Toyota","08007000111"]]},
-  {h:"🏠 Hébergements", rows:[["Tsuruya (ryokan)","0263932331"],["Glamping Varie","05053695536"],["Kiraboshi (centre d'ops 8h-20h)","05017203760"]]},
-  {h:"💴 À ne pas oublier", list:["Cash : taxe onsen (¥150/pers = ¥600), bus Tsumago→Magome (horaires à vérifier la veille), parking Tsumago ~¥500",
-    "Péages = carte ETC, soldés à la restitution Nihonbashi",
-    "Permis FR + traduction JAF + passeports → sur soi le 20/10",
-    "Enfants : demi-tarif trains 6-11 ans"]},
-];
 // ———————————————————————— APP ————————————————————————
+// Les données du voyage (SLEEPS, DAYS, MENUS, ACHATS, FICHES, CODES, INFOS, PREDEP…)
+// vivent dans ./data.js, chargé juste au-dessus — mode d'emploi d'édition : GUIDE.md.
 const $ = s => document.querySelector(s);
 const PHCOLOR = {"Kyoto":"#c43d2f","Road trip":"#7d9a4f","Tokyo":"#30557d","Vol":"#777"};
 const fmt = ds => new Date(ds+"T12:00:00").toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"});
@@ -447,7 +200,7 @@ function toggleBought(id){ if(BOUGHT.st[id]) delete BOUGHT.st[id]; else BOUGHT.s
 let openFiche=null, yenVal="";
 function toggleFiche(id){ openFiche = openFiche===id? null : id; render(true); }
 function toggleCheck(id){ if(CHECK.st[id]) delete CHECK.st[id]; else CHECK.st[id]=1; CHECK.save(); render(true); }
-function taux(){ const t=parseFloat(CHECK.st._taux); return t>0? t : 185; }
+function taux(){ const t=parseFloat(CHECK.st._taux); return t>0? t : TAUX_DEFAUT; }
 function eurOut(){ const y=parseFloat(String(yenVal).replace(/[\s¥]/g,"").replace(",","."));
   return y>0? "≈ "+(y/taux()).toLocaleString("fr-FR",{maximumFractionDigits:0})+" €" : "≈ — €"; }
 function calcYen(v){ yenVal=String(v).replace(/["'<>]/g,""); $("#calcout").textContent=eurOut(); }
@@ -456,9 +209,11 @@ const mapsQ = q => "https://www.google.com/maps/search/?api=1&query="+encodeURIC
 const mapsDir = q => "https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(q)+"&travelmode=driving";
 function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"),1400); }
 function copy(v,btn){ navigator.clipboard?.writeText(v).then(()=>{ toast("Copié ✓"); btn.classList.add("copied"); setTimeout(()=>btn.classList.remove("copied"),1200); }); }
-function countdown(){ const t=new Date(), dep=new Date("2026-10-13T12:00:00");
+function countdown(){ // bornes dérivées de DAYS (data.js) : départ = 1er jour, fin = lendemain du dernier
+  const t=new Date(), dep=new Date(DAYS[0].d+"T12:00:00");
   const i=todayIdx(), diff=Math.ceil((dep-t)/864e5);
-  $("#countdown").textContent = diff>0 ? `J−${diff} ✈️` : (t<new Date("2026-11-06")? `Jour ${i+1}/24` : "おかえり !"); }
+  const fin=new Date(DAYS[DAYS.length-1].d+"T12:00:00"); fin.setDate(fin.getDate()+1); fin.setHours(0,0,0,0);
+  $("#countdown").textContent = diff>0 ? `J−${diff} ✈️` : (t<fin? `Jour ${i+1}/${DAYS.length}` : "おかえり !"); }
 function sleepCard(d){ const s=SLEEPS[d.sleep]; if(!s || d.sleep==="avion") return s? `<div class="card sleep"><div class="lbl">Cette nuit</div><div class="name">${s.name}</div></div>`:"";
   return `<div class="card sleep">
     <div class="lbl">Nuit</div>
@@ -469,18 +224,9 @@ function sleepCard(d){ const s=SLEEPS[d.sleep]; if(!s || d.sleep==="avion") retu
       ${s.code? `<button class="btn code-chip" onclick="copy('${s.code}',this)">⧉ ${s.code}</button>`:""}
       ${s.tel? `<a class="btn" href="tel:${s.tel}">📞 Appeler</a>`:""}
     </div></div>`; }
-function predepCard(){
-  if(new Date().toISOString().slice(0,10) >= "2026-10-13") return "";
-  return `<div class="card" style="border-left:4px solid var(--warn)">
-    <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--warn);text-transform:uppercase">Avant le départ</div>
-    <ul style="margin:8px 0 10px;padding-left:20px">
-      <li style="margin:5px 0;font-size:14.5px">Check-in Air China en ligne — ~lun 12/10</li>
-      <li style="margin:5px 0;font-size:14.5px">Billets musée Ghibli — verdict cousin dim 11/10</li>
-      <li style="margin:5px 0;font-size:14.5px">Messages aux hôtes à envoyer (heures d'arrivée)</li>
-      <li style="margin:5px 0;font-size:14.5px">Héberger + installer le roadbook sur les 2 iPhones</li>
-      <li style="margin:5px 0;font-size:14.5px">🚲 Réserver vélos + sièges enfants pour Kyoto</li>
-    </ul>
-    <a class="btn" href="./valises.html">🧳 Checklist valises</a></div>`; }
+// (Décision 2026-10-09 : le roadbook ne sert PAS à la préparation — pas de card avant-départ,
+// pas de lien vers valises.html. Les deux usages sont distincts.)
+function predepCard(){ return ""; }
 function pratChips(d){ const chips=[...(d.prat||[])], s=SLEEPS[d.sleep];
   if(s && s.resa) chips.push({t:"📱 Résa logement", href:s.resa});
   if(!chips.length) return "";
@@ -568,12 +314,12 @@ function viewAchats(){
     return `<div class="buyrow${b?" done":""}" onclick="toggleBought('${a.id}')">
       <div class="bbox">${b?"✓":""}</div>
       <div class="k">${a.t}${sub?`<small>${sub}</small>`:""}</div></div>`; }).join("")
-  + `</div><p class="legend">⚠️ Détaxe : −10 % immédiat en caisse <b>jusqu'au 31/10 inclus</b> (passeport, min ¥5 000 HT/magasin/jour).<br>Dès le 1/11 : on paie plein tarif, remboursement aux bornes douane de Haneda avant le check-in (garder les tickets, arriver en avance le 5/11).<br>→ Fenêtre en or : <b>28→31 octobre</b> (Akihabara/Yodobashi dès l'arrivée à Tokyo).</p>`; }
+  + `</div><p class="legend">${DETAXE_NOTE}</p>`; }
 function viewInfos(){ return `<h3 class="sec">🔑 Codes de résa</h3>` + codesSection() + INFOS.map(b=>{
     let inner = b.rows? b.rows.map(r=>`<div class="coderow"><div class="k">${r[0]}</div><a class="tel" href="tel:${r[1].replace(/[^+\d]/g,'')}">${r[1]}</a></div>`).join("")
       : `<ul style="margin:6px 0 2px;padding-left:20px">${b.list.map(x=>`<li style="margin:6px 0;font-size:14.5px">${x}</li>`).join("")}</ul>`;
     return `<h3 class="sec">${b.h}</h3><div class="card" style="padding:6px 14px">${inner}</div>`; }).join("")
-  + `<h3 class="sec">🧳 Avant le départ</h3><div class="card"><a class="btn" href="./valises.html" style="width:100%;justify-content:center">Ouvrir la checklist valises →</a></div>`; }
+; }
 function render(keepScroll){ const m=$("#main"), y=window.scrollY;
   if(tab==="today") m.innerHTML = dayFiche(cur);
   else if(tab==="days") m.innerHTML = viewDays();

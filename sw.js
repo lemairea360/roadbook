@@ -1,10 +1,18 @@
-// Service worker « Japon 2026 » — stratégie cache-first, pensé pour iOS :
-// enregistrement simple, pas de background sync, pas de notifications.
-// Pour forcer une mise à jour après modification des données : incrémenter VERSION.
-const VERSION = "japon2026-v6";
+// Service worker « Japon 2026 » — pensé pour iOS : enregistrement simple,
+// pas de background sync, pas de notifications.
+//
+// Stratégie pour les fichiers same-origin : STALE-WHILE-REVALIDATE.
+//   1. On répond immédiatement avec le cache (lancement instantané, hors-ligne garanti).
+//   2. En parallèle, on re-télécharge le fichier et on met le cache à jour.
+//   → Une mise à jour publiée (push sur main → GitHub Pages) est récupérée au premier
+//     lancement avec réseau, et VISIBLE au lancement SUIVANT — sans toucher à VERSION.
+// VERSION reste utile pour les refontes (changement de liste de fichiers, purge
+// complète) : l'incrémenter supprime l'ancien cache à l'activation.
+const VERSION = "japon2026-v7";
 const PRECACHE = [
   "./",
   "./index.html",
+  "./data.js",
   "./valises.html",
   "./manifest.webmanifest",
   "./icon-512.png",
@@ -30,24 +38,37 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   const req = event.request;
   if (req.method !== "GET") return;
+  // Requêtes externes (Google Maps, Airbnb…) : réseau direct, jamais mises en cache.
+  if (new URL(req.url).origin !== self.location.origin) return;
 
-  event.respondWith(
-    caches.match(req, { ignoreSearch: true }).then((cached) => {
-      if (cached) return cached;
-      return fetch(req)
-        .then((res) => {
-          // Ne mettre en cache que les réponses locales valides (pas les liens Google Maps, etc.)
-          if (res.ok && new URL(req.url).origin === self.location.origin) {
-            const copy = res.clone();
-            caches.open(VERSION).then((cache) => cache.put(req, copy));
-          }
-          return res;
-        })
-        .catch(() => {
-          // Hors-ligne : pour une navigation, servir l'app ; sinon échec silencieux.
-          if (req.mode === "navigate") return caches.match("./index.html");
-          return Response.error();
-        });
-    })
-  );
+  event.respondWith((async () => {
+    const cache = await caches.open(VERSION);
+    const cached = await cache.match(req, { ignoreSearch: true });
+
+    // Revalidation réseau : met le cache à jour pour le prochain lancement.
+    // null en cas d'échec (hors-ligne) — jamais d'exception non rattrapée.
+    const network = fetch(req)
+      .then((res) => {
+        if (res.ok) cache.put(req, res.clone());
+        return res;
+      })
+      .catch(() => null);
+
+    if (cached) {
+      // Cache servi tout de suite ; la revalidation continue en arrière-plan.
+      event.waitUntil(network);
+      return cached;
+    }
+
+    // Pas en cache (premier accès) : on attend le réseau.
+    const res = await network;
+    if (res) return res;
+
+    // Hors-ligne : pour une navigation, servir l'app ; sinon échec propre.
+    if (req.mode === "navigate") {
+      const fallback = await cache.match("./index.html");
+      if (fallback) return fallback;
+    }
+    return Response.error();
+  })());
 });
