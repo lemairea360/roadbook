@@ -1,0 +1,17 @@
+{
+  "name": "Japon 2026 — compagnon de voyage",
+  "short_name": "Japon 2026",
+  "description": "Compagnon de voyage familial — itinéraire, codes et infos hors-ligne (14/10 → 05/11/2026).",
+  "lang": "fr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f6f4ef",
+  "theme_color": "#f6f4ef",
+  "icons": [
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

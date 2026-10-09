@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141412" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<title>Valises · Japon 2026</title>
+<style>
+  :root{ --bg:#f6f4ef; --card:#fff; --ink:#1c1b18; --muted:#78736a; --accent:#c43d2f;
+    --chip:#eeeae2; --line:#e7e2d8; --ok:#2e7d4f; --mid:#b3820e; --mid-soft:#f7edd4;
+    --r:16px; --shadow:0 1px 3px rgba(0,0,0,.07),0 4px 14px rgba(0,0,0,.05); }
+  @media (prefers-color-scheme: dark){ :root{ --bg:#141412; --card:#1f1e1b; --ink:#f0ede6; --muted:#a39d91;
+    --accent:#e86a5b; --chip:#2c2a26; --line:#33312c; --mid:#d9a92e; --mid-soft:#2e2715; --shadow:0 1px 3px rgba(0,0,0,.4);} }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);
+    font-size:16px;line-height:1.4;padding-bottom:40px}
+  header{position:sticky;top:0;z-index:10;background:var(--bg);padding:calc(10px + env(safe-area-inset-top)) 16px 10px}
+  header .row1{display:flex;align-items:center;justify-content:space-between}
+  header h1{font-size:20px;margin:0}
+  header h1 a{text-decoration:none;color:var(--muted);font-size:15px;font-weight:400}
+  .globalbar{height:7px;background:var(--chip);border-radius:9px;margin:10px 0 8px;overflow:hidden;display:flex}
+  .globalbar .packed{background:var(--ok)} .globalbar .got{background:var(--mid)}
+  .seg{display:flex;background:var(--chip);border-radius:11px;padding:3px;margin-top:4px}
+  .seg button{flex:1;border:0;background:none;padding:7px 0;border-radius:9px;font-size:13.5px;font-weight:600;color:var(--muted);cursor:pointer}
+  .seg button.on{background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
+  .filters{display:flex;gap:8px;margin-top:8px;align-items:center}
+  .filters label{display:flex;align-items:center;gap:6px;font-size:13.5px;color:var(--muted)}
+  main{padding:0 14px;max-width:560px;margin:0 auto}
+  .grp{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);margin:12px 0;overflow:hidden}
+  .grp .head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px 8px}
+  .grp .head .t{font-weight:700;font-size:15.5px}
+  .grp .head .n{font-size:12.5px;color:var(--muted)}
+  .grp .bar{height:5px;background:var(--chip);margin:0 14px;border-radius:5px;overflow:hidden;display:flex}
+  .grp .bar .packed{background:var(--ok)} .grp .bar .got{background:var(--mid)}
+  .items{padding:6px 6px 8px}
+  .it{display:flex;align-items:flex-start;gap:11px;padding:9px 8px;border-radius:11px;cursor:pointer;user-select:none;-webkit-user-select:none}
+  .it:active{background:var(--chip)}
+  .it .box{flex:0 0 26px;height:26px;border-radius:9px;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:15px;margin-top:1px}
+  .it.s1 .box{background:var(--mid-soft);border-color:var(--mid)}
+  .it.s2 .box{background:var(--ok);border-color:var(--ok);color:#fff}
+  .it .tx{flex:1}
+  .it.s2 .tx{opacity:.45;text-decoration:line-through}
+  .it .tx small{display:block;color:var(--muted);font-size:12.5px}
+  .it .tag{flex:0 0 auto;font-size:11px;font-weight:700;color:var(--muted);background:var(--chip);border-radius:7px;padding:3px 7px;margin-top:3px}
+  .legend{font-size:12.5px;color:var(--muted);text-align:center;margin:14px 0 6px}
+  .legend b{color:var(--ink)}
+  .actions{display:flex;gap:10px;justify-content:center;margin:16px 0}
+  .actions button{border:0;border-radius:11px;padding:9px 14px;font-size:13.5px;font-weight:600;background:var(--chip);color:var(--ink);cursor:pointer}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);
+    padding:9px 16px;border-radius:99px;font-size:14px;opacity:0;transition:opacity .25s;pointer-events:none;z-index:30}
+  .toast.show{opacity:1}
+</style>
+</head>
+<body>
+<header>
+  <div class="row1"><h1>🧳 Valises <a href="./index.html">· retour carnet</a></h1><span id="stats" style="font-size:13px;color:var(--muted)"></span></div>
+  <div class="globalbar" id="gbar"></div>
+  <div class="seg" id="seg">
+    <button data-g="b" class="on">Par sac</button>
+    <button data-g="l">Par rangement</button>
+    <button data-g="c">Par catégorie</button>
+  </div>
+  <div class="filters">
+    <label><input type="checkbox" id="hideDone"> masquer ce qui est rangé</label>
+  </div>
+</header>
+<main id="main"></main>
+<p class="legend">Tape un objet pour avancer : ⬜ à trouver → <b style="color:var(--mid)">🖐 rassemblé</b> → <b style="color:var(--ok)">✓ rangé dans le sac</b> → ⬜</p>
+<div class="actions">
+  <button onclick="exportMissing()">📋 Copier ce qui manque</button>
+  <button onclick="resetAll()">↺ Tout réinitialiser</button>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+// Données — source de vérité : logistique/valises.md (vault). b=sac, l=lieu de rangement maison, c=catégorie.
+const BAGS = { S1:"Soute S1 — adultes + pharmacie", S2:"Soute S2 — filles + jeux (≤15 kg !)",
+  C1:"Cabine C1 — « sac étape » road trip", C2:"Cabine C2 — électronique & papiers",
+  C3:"Cabine C3 — rechange ×4 + liquides", C4:"Cabine C4 — vol & confort",
+  D:"Sacs à dos D1-D4", P:"Sur soi / portés" };
+const ITEMS = [
+ // Documents & argent
+ {c:"📄 Documents & argent", l:"Papiers / bureau", b:"C2", t:"Passeports ×4", d:"+ 2 jeux de photocopies (dans S1)"},
+ {c:"📄 Documents & argent", l:"Papiers / bureau", b:"C2", t:"Permis de conduire FR (Antoine)", d:"🔸 + Emilie si elle conduit (traduction JAF ?)"},
+ {c:"📄 Documents & argent", l:"Papiers / bureau", b:"C2", t:"QR Visit Japan Web ×4", d:"imprimés + captures d'écran"},
+ {c:"📄 Documents & argent", l:"Papiers / bureau", b:"C2", t:"Billets d'avion", d:"PDF sur 2 téléphones + 1 impression"},
+ {c:"📄 Documents & argent", l:"Papiers / bureau", b:"C2", t:"Confirmations résas imprimées", d:"la page codes du carnet"},
+ {c:"📄 Documents & argent", l:"Papiers / bureau", b:"P", t:"CB Revolut Antoine", d:"🔸 + Revolut Emilie ?"},
+ {c:"📄 Documents & argent", l:"Papiers / bureau", b:"P", t:"CB CEGEE ×2 (secours)"},
+ {c:"📄 Documents & argent", l:"Papiers / bureau", b:"C2", t:"Euros espèces (secours)"},
+ {c:"📄 Documents & argent", l:"Papiers / bureau", b:"C2", t:"Yens cash", d:"🔸 sinon retrait 7-Eleven à l'arrivée"},
+ {c:"📄 Documents & argent", l:"Papiers / bureau", b:"C2", t:"Attestation assurance voyage", d:"🔸 vérifier couverture carte"},
+ // Électronique
+ {c:"📱 Électronique", l:"Bureau / chargeurs", b:"C2", t:"Téléphones ×2 + chargeurs ×3", d:"câbles longs ×2"},
+ {c:"📱 Électronique", l:"Bureau / chargeurs", b:"C2", t:"Multiprise USB compacte", d:"1 prise murale → 4 appareils"},
+ {c:"📱 Électronique", l:"Bureau / chargeurs", b:"C2", t:"Adaptateurs prises type A ×2", d:"fiches plates Japon"},
+ {c:"📱 Électronique", l:"Bureau / chargeurs", b:"D", t:"Batterie externe", d:"chargée !"},
+ {c:"📱 Électronique", l:"Chambre filles", b:"C4", t:"Tablette(s) chargées + casques enfants ×2", d:"vol 16h !"},
+ {c:"📱 Électronique", l:"Bureau / chargeurs", b:"C2", t:"Appareil photo + SD + chargeur", d:"🔸"},
+ {c:"📱 Électronique", l:"Bureau / chargeurs", b:"C1", t:"Lampe frontale", d:"glamping : sanitaires dehors"},
+ {c:"📱 Électronique", l:"Bureau / chargeurs", b:"D", t:"Écouteurs adultes ×2 + liseuse(s) 🔸"},
+ // Vêtements
+ {c:"👕 Vêtements", l:"Dressing adultes", b:"S1", t:"Sous-vêtements + chaussettes ×8 (adultes)", d:"chaussettes SANS trous 😄"},
+ {c:"👕 Vêtements", l:"Dressing adultes", b:"S1", t:"Hauts ×6-7 + pantalons ×3 (adultes)"},
+ {c:"👕 Vêtements", l:"Dressing adultes", b:"S1", t:"Pulls ×2 + doudoune compressible (adultes)", d:"Shirahone/glamping 3-10 °C la nuit"},
+ {c:"👕 Vêtements", l:"Dressing adultes", b:"S1", t:"Vestes imperméables adultes"},
+ {c:"👕 Vêtements", l:"Dressing adultes", b:"S1", t:"Tenue « correcte » ×2 adultes", d:"dîner kaiseki ryokan"},
+ {c:"👕 Vêtements", l:"Chambre filles", b:"S2", t:"Sous-vêtements + chaussettes ×8 (filles)"},
+ {c:"👕 Vêtements", l:"Chambre filles", b:"S2", t:"Hauts ×7 + pantalons/leggings ×3 + 1 short (filles)"},
+ {c:"👕 Vêtements", l:"Chambre filles", b:"S2", t:"Pulls ×2 + doudounes (filles)"},
+ {c:"👕 Vêtements", l:"Chambre filles", b:"S2", t:"Vestes imperméables filles"},
+ {c:"👕 Vêtements", l:"Chambre filles", b:"S2", t:"Tenues « correctes » filles ×1", d:"ryokan"},
+ {c:"👕 Vêtements", l:"Salle de bain", b:"S1", t:"Pyjamas CHAUDS ×4", d:"nuit glamping ~5 °C"},
+ {c:"👕 Vêtements", l:"Dressing", b:"S1", t:"Maillots de bain ×4 ⚠️", d:"OBLIGATOIRES à Yunessun + plage Izu"},
+ {c:"👕 Vêtements", l:"Entrée", b:"S2", t:"Casquettes/bonnets ×4"},
+ {c:"👕 Vêtements", l:"Dressing", b:"C3", t:"1 tenue de rechange complète ×4 EN CABINE", d:"si les soutes s'égarent"},
+ // Chaussures
+ {c:"👟 Chaussures", l:"Entrée", b:"P", t:"Chaussures de marche ×4 (portées dans l'avion)", d:"trek 8 km + 15 000 pas/j"},
+ {c:"👟 Chaussures", l:"Entrée", b:"S1", t:"Baskets de rechange ×4", d:"faciles à enlever (déchaussage permanent)"},
+ {c:"👟 Chaussures", l:"Entrée", b:"S2", t:"Tongs/claquettes ×4", d:"ryokan, glamping, plage"},
+ // Toilette & santé
+ {c:"🧴 Toilette & santé", l:"Salle de bain", b:"S1", t:"Trousses de toilette ×2", d:"brosses à dents, élastiques filles…"},
+ {c:"🧴 Toilette & santé", l:"Pharmacie", b:"S1", t:"Pharmacie famille", d:"Doliprane A+E, ibuprofène, antihistaminique, pansements, thermomètre, Biafine, SRO"},
+ {c:"🧴 Toilette & santé", l:"Pharmacie", b:"D", t:"Anti-nausée Flora + sacs ×10 ⚠️", d:"routes Shirahone & Hakone — dans le sac de jour !"},
+ {c:"🧴 Toilette & santé", l:"Pharmacie", b:"S1", t:"Crème solaire + anti-moustique", d:"Izu"},
+ {c:"🧴 Toilette & santé", l:"Salle de bain", b:"C3", t:"Gel hydroalcoolique + mouchoirs ×10 + lingettes"},
+ {c:"🧴 Toilette & santé", l:"Salle de bain", b:"S1", t:"Serviettes microfibre ×2", d:"plage/onsen"},
+ {c:"🧴 Toilette & santé", l:"Buanderie", b:"S1", t:"Feuilles/dosettes de lessive ×8 + filet", d:"🔸 ou achat konbini"},
+ {c:"🧴 Toilette & santé", l:"Pharmacie", b:"C2", t:"Médicaments perso + ordonnances", d:"🔸 garder les boîtes"},
+ // Enfants
+ {c:"🧒 Enfants & vol", l:"Chambre filles", b:"D", t:"DOUDOUS ⚠️", d:"sacs à dos cabine, JAMAIS en soute"},
+ {c:"🧒 Enfants & vol", l:"Chambre filles", b:"C4", t:"Jeux de cartes ×2 + jeu magnétique"},
+ {c:"🧒 Enfants & vol", l:"Chambre filles", b:"C4", t:"Carnets + crayons/feutres", d:"vol + carnet de voyage des filles ✍️"},
+ {c:"🧒 Enfants & vol", l:"Chambre filles", b:"C4", t:"Livres ×2-3 par fille"},
+ {c:"🧒 Enfants & vol", l:"Chambre filles", b:"C4", t:"Surprises calmes pour le vol", d:"gommettes, nouveauté = jackpot"},
+ {c:"🧒 Enfants & vol", l:"Cuisine", b:"C4", t:"Snacks français pour les vols", d:"gâteaux, compotes à boire"},
+ {c:"🧒 Enfants & vol", l:"Cuisine", b:"D", t:"Gourdes ×4", d:"vides à la sécurité"},
+ // Divers road trip
+ {c:"🚗 Road trip & divers", l:"Placard voyage", b:"S2", t:"Sac pliable souvenirs"},
+ {c:"🚗 Road trip & divers", l:"Placard voyage", b:"S1", t:"Pochons / packing cubes", d:"🔸 si on en a"},
+ {c:"🚗 Road trip & divers", l:"Placard voyage", b:"C1", t:"Ponchos pluie ×4", d:"trek"},
+ {c:"🚗 Road trip & divers", l:"Placard voyage", b:"C1", t:"Mini sac à linge sale", d:"pour le sac étape"},
+ {c:"🚗 Road trip & divers", l:"Cuisine", b:"S1", t:"Couteau suisse ⚠️ EN SOUTE"},
+ {c:"🚗 Road trip & divers", l:"Bureau", b:"D", t:"Stylos ×2 + sacs zip divers"},
+ {c:"🚗 Road trip & divers", l:"Entrée", b:"D", t:"Lunettes de soleil ×4"},
+ {c:"🚗 Road trip & divers", l:"Placard voyage", b:"S2", t:"Parapluie compact ×1", d:"ou konbini ¥500 sur place"},
+];
+// ——— état ———
+const KEY="valises-v1";
+// Stockage blindé : localStorage peut lever SecurityError (aperçu data:, Safari privé) → repli mémoire.
+const store = (()=>{ try{ localStorage.getItem(KEY); return localStorage; }catch(e){ const m={};
+  return { getItem:k=>m[k]??null, setItem:(k,v)=>{m[k]=v} }; } })();
+let st = {}; try{ st = JSON.parse(store.getItem(KEY)||"{}"); }catch(e){ st={}; }
+let grp="b", hideDone=false;
+const $=s=>document.querySelector(s);
+const save=()=>store.setItem(KEY,JSON.stringify(st));
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1500);}
+function groupsOf(){ const map={};
+  ITEMS.forEach((it,i)=>{ const k = grp==="b"? (BAGS[it.b]||it.b) : grp==="l"? it.l : it.c;
+    (map[k]=map[k]||[]).push([it,i]); });
+  return map; }
+function bar(got,packed,total){ return `<div class="bar"><div class="packed" style="width:${packed/total*100}%"></div><div class="got" style="width:${got/total*100}%"></div></div>`; }
+function render(){
+  const map=groupsOf(); let h="";
+  let G=0,P=0;
+  ITEMS.forEach((_,i)=>{ if(st[i]===1)G++; if(st[i]===2)P++; });
+  $("#gbar").innerHTML=`<div class="packed" style="width:${P/ITEMS.length*100}%"></div><div class="got" style="width:${G/ITEMS.length*100}%"></div>`;
+  $("#stats").textContent=`${P} rangé·s / ${ITEMS.length}`;
+  for(const [k,arr] of Object.entries(map)){
+    const tot=arr.length, got=arr.filter(([,i])=>st[i]===1).length, packed=arr.filter(([,i])=>st[i]===2).length;
+    const rows = arr.filter(([,i])=>!(hideDone&&st[i]===2)).map(([it,i])=>{
+      const s=st[i]||0;
+      const tag = grp==="b"? (grp==="c"? "" : it.c.slice(0,2)) : it.b;
+      return `<div class="it s${s}" onclick="cycle(${i})">
+        <div class="box">${s===2?"✓":s===1?"🖐":""}</div>
+        <div class="tx">${it.t}${it.d?`<small>${it.d}</small>`:""}</div>
+        <div class="tag">${tag}</div></div>`; }).join("");
+    if(!rows && hideDone) { h+=`<div class="grp"><div class="head"><div class="t">${k}</div><div class="n">✅ complet</div></div></div>`; continue; }
+    h+=`<div class="grp"><div class="head"><div class="t">${k}</div><div class="n">${packed}/${tot}</div></div>${bar(got,packed,tot)}<div class="items">${rows}</div></div>`;
+  }
+  $("#main").innerHTML=h;
+}
+function cycle(i){ st[i]=((st[i]||0)+1)%3; save(); render(); }
+function resetAll(){ if(confirm("Tout décocher ?")){ st={}; save(); render(); } }
+function exportMissing(){ const miss=ITEMS.filter((_,i)=>(st[i]||0)===0).map(it=>`• ${it.t} (${it.b})`).join("\n");
+  navigator.clipboard?.writeText(miss? "Il manque encore :\n"+miss : "Tout est rassemblé ou rangé ✅").then(()=>toast("Liste copiée ✓")); }
+document.querySelectorAll("#seg button").forEach(b=>b.addEventListener("click",()=>{ grp=b.dataset.g;
+  document.querySelectorAll("#seg button").forEach(x=>x.classList.toggle("on",x===b)); render(); }));
+$("#hideDone").addEventListener("change",e=>{ hideDone=e.target.checked; render(); });
+if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+render();
+</script>
+</body>
+</html>
