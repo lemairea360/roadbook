@@ -209,7 +209,7 @@ const ACHATS = [
   {id:"liseuse", t:"Liseuse", who:"pour notre fille (9 ans)"},   // fiche détaillée → FICHES.liseuse
   {id:"montre", t:"Montre sport", who:"pour Emilie"},            // fiche détaillée → FICHES.montre
   {id:"switch", t:"Nintendo Switch", where:"Bic Camera / Yodobashi", note:"prix Japon intéressants · ⚠️ acheter avant le 31/10 pour la détaxe immédiate"},
-  {id:"airpodsmax", t:"AirPods Max", note:"🔸 comparer prix détaxé vs FR"},
+  {id:"airpodsmax", t:"AirPods Max 2", who:"pour Antoine"},         // fiche détaillée → FICHES.airpodsmax
   {id:"souvenirs", t:"Souvenirs filles", who:"les filles", where:"Pokémon Center, Ghibli"},
   {id:"the", t:"Thé / papeterie", note:"à définir"},
 ];
@@ -249,6 +249,24 @@ const FICHES = {
    {id:"montre-apple-gps", t:"Apple Watch (plan B) : modèle GPS, pas cellulaire (garantie internationale OK sur GPS) ; 42 mm 71 800 ¥ TTC"},
    {id:"montre-facture", t:"Garder la facture tax-free (douane à la sortie)"} ],
   risk:"Coros : firmware mondial, français inclus, risques faibles. Garmin au Japon : garantie régionale + langue non garantie → achat France. Écartées : FR570 (fonctions inutiles), Venu 4, Apple Watch SE 3. Étude complète : recherches/achats/montre.md."
+ },
+ airpodsmax:{
+  dec:"🔸 Oui/non : JP ~461 € hors taxe (taux 177) vs FR −15 % employé = 492 € → gain 30-50 € seulement",
+  arb:[
+   "Référence à battre : Apple FR 579 € − 15 % (rabais employé) = 492 €. Prix FR inchangé depuis avril.",
+   "Japon : 89 800 ¥ TTC (hausse JP du 18/07 = AirPods 4 / Pro 3 seulement, Max 2 inchangés) → 81 636 ¥ hors taxe = 461 € à 177 ¥/€, 441 € à 185.",
+   "RÈGLE : convertisseur ci-dessus, entrer 81636 + taux du jour. ≤ 455 € (taux ≥ ~180) → achat JP défendable. > 460 € (taux < 178) → acheter en France à −15 %.",
+   "Ce qu'on perd au Japon : la garantie légale 2 ans (reste 1 an Apple mondial) ; + ~1 % de change si plafond Revolut dépassé (la voiture l'a déjà consommé)." ],
+  ou:"Apple Store Ginza / Marunouchi / Omotesando (tax-free en caisse, passeport) ou Bic Camera / Yodobashi (même 89 800 ¥) — acheter entre le 28 et le 31/10 (détaxe immédiate)",
+  cands:[
+   {m:"AirPods Max 2", s:"Modèle mondial identique (USB-C, 5 couleurs, firmware mondial, français) · 1 an de garantie Apple internationale", jp:"~81 600 ¥", eur:"≈ 461 € hors taxe à 177 ¥/€ (441 € à 185)", fr:"FR : 579 € · −15 % employé = 492 € · Amazon/Rakuten 529 €", v:"Gain 30-50 €", k:"mid"} ],
+  check:[
+   {id:"airpods-taux", t:"Convertisseur : 81636 ¥ au taux du jour (app bancaire) → ≤ 455 € = oui, > 460 € = non"},
+   {id:"airpods-prix", t:"Vérifier l'étiquette : 89 800 ¥ TTC (si plus → hausse récente, recalculer)"},
+   {id:"airpods-taxfree", t:"Tax-free (免税) avec passeport original, avant le 31/10 ; après = remboursement à Haneda le 5/11"},
+   {id:"airpods-carte", t:"Payer avec la carte la moins chère en change ce jour-là (Revolut : plafond mensuel + majoration week-end)"},
+   {id:"airpods-facture", t:"Pas de gravure (délai) · garder la facture tax-free pour la douane"} ],
+  risk:"Évènement Apple le 13/10 : re-vérifier les prix avant le 28/10 si annonce casque. Rabais employé 15 % à confirmer avec la connaissance (conditions, plafond). Étude : recherches/achats/airpods-max.md."
  }
 };
 const CODES = [
