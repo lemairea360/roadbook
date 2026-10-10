@@ -208,7 +208,7 @@ const MENUS = {
 const ACHATS = [
   {id:"liseuse", t:"Liseuse", who:"pour notre fille (9 ans)"},   // fiche détaillée → FICHES.liseuse
   {id:"montre", t:"Montre sport", who:"pour Emilie"},            // fiche détaillée → FICHES.montre
-  {id:"switch", t:"Nintendo Switch", where:"Bic Camera / Yodobashi", note:"prix Japon intéressants · ⚠️ acheter avant le 31/10 pour la détaxe immédiate"},
+  {id:"switch", t:"Switch 2 · accessoires · jeux", who:"famille"},     // fiche détaillée → FICHES.switch
   {id:"airpodsmax", t:"AirPods Max 2", who:"pour Antoine"},         // fiche détaillée → FICHES.airpodsmax
   {id:"souvenirs", t:"Souvenirs filles", who:"les filles", where:"Pokémon Center, Ghibli"},
   {id:"the", t:"Thé / papeterie", note:"à définir"},
@@ -267,6 +267,28 @@ const FICHES = {
    {id:"airpods-carte", t:"Payer avec la carte la moins chère en change ce jour-là (Revolut : plafond mensuel + majoration week-end)"},
    {id:"airpods-facture", t:"Pas de gravure (délai) · garder la facture tax-free pour la douane"} ],
   risk:"Évènement Apple le 13/10 : re-vérifier les prix avant le 28/10 si annonce casque. Rabais employé 15 % à confirmer avec la connaissance (conditions, plafond). Étude : recherches/achats/airpods-max.md."
+ },
+ switch:{
+  dec:"❌ Console : non (multilingue = en ligne JP seulement) · ✅ Manettes & cartouches Nintendo : ~51 € vs 90 € FR",
+  arb:[
+   "Console : la version japonaise (59 980 ¥) est VERROUILLÉE (japonais seul, comptes JP). La multilingue (69 980 ¥) n'est vendue qu'en ligne sur le My Nintendo Store JP (compte + adresse JP, 50 h de jeu exigées) → inaccessible, et sans tax-free. Console = en France (499,99 €, promos ~420 €).",
+   "Accessoires : matériel mondial identique, Bluetooth, pas de zone. −40 % hors taxe. ⚠️ Sans Switch 2 à la maison, seul le Pro Controller 2 sert tout de suite (OK sur Switch 1). Joy-Con 2 / caméra = Switch 2 uniquement → pari sur un achat futur.",
+   "Jeux : cartouches Switch 2 non zonées. Les jeux NINTENDO sont multilingues (Mario Kart World JP = 12 langues dont français, vérifié). Jeux tiers : souvent JP/EN seulement, et attention aux « Game-Key Card » (carte vide + téléchargement) → éviter." ],
+  ou:"Nintendo KYOTO (Takashimaya, Shijō-Kawaramachi, 15 min de l'Airbnb — tax-free) · Nintendo TOKYO (Shibuya Parco) · Bic Camera / Yodobashi rayon ゲーム — grouper ≥ 5 000 ¥ dans le même magasin le même jour",
+  cands:[
+   {m:"Pro Controller 2", s:"Marche aussi sur la Switch 1 (Bluetooth, sans bouton C) → utile tout de suite", jp:"~9 070 ¥", eur:"≈ 51 € hors taxe (49 € à 185)", fr:"FR : 89,99 € (promos ~70 €)", v:"−39 €", k:"ok"},
+   {m:"Mario Kart World (cartouche JP)", s:"12 langues dont français (fiche JP vérifiée) · Switch 2 uniquement", jp:"~9 070 ¥", eur:"≈ 51 € hors taxe", fr:"FR : 89,99 €", v:"−39 €", k:"ok"},
+   {m:"Joy-Con 2 (paire)", s:"Switch 2 uniquement — ne marche PAS sur la Switch 1", jp:"~9 070 ¥", eur:"≈ 51 € hors taxe", fr:"FR : 89,99 €", v:"−39 € si Switch 2", k:"mid"},
+   {m:"Caméra Switch 2", s:"Switch 2 uniquement (GameChat)", jp:"~5 440 ¥", eur:"≈ 31 € hors taxe", fr:"FR : 59,99 €", v:"−29 € si Switch 2", k:"mid"},
+   {m:"Jeux Switch 1 Nintendo (cartouches JP)", s:"Marchent sur Switch 1 et 2 · jeux Nintendo multilingues (lire 対応言語 au dos : フランス語)", jp:"~5 500-5 900 ¥", eur:"≈ 31-33 € hors taxe", fr:"FR : 50-60 €", v:"−20 à −25 €", k:"ok"},
+   {m:"Console Switch 2", s:"JP verrouillée 59 980 ¥ · multilingue 69 980 ¥ en ligne JP seulement", jpn:"inaccessible / verrouillée", fr:"FR : 499,99 € (promos ~420 €)", v:"Non", k:"no"} ],
+  check:[
+   {id:"switch-prix", t:"Étiquettes : Pro Controller / Joy-Con 2 / Mario Kart World = 9 980 ¥ TTC (si plus cher → hausse, recalculer)"},
+   {id:"switch-langue", t:"Jeu : au dos de la boîte, 対応言語 contient フランス語 ; pas de mention ゲームキーカード (Game-Key Card)"},
+   {id:"switch-grouper", t:"Tout dans le même magasin le même jour (seuil tax-free 5 000 ¥), passeport original, avant le 31/10"},
+   {id:"switch-pas-console", t:"Pas de console japonaise, même en promo (verrouillée japonais / comptes JP)"},
+   {id:"switch-facture", t:"Garder les factures tax-free pour la douane"} ],
+  risk:"SAV Nintendo au Japon uniquement (risque faible sur manettes/jeux). Joy-Con 2 et caméra ne servent à rien sans Switch 2 : ne les prendre que si la console (achat FR) est décidée. Étude : recherches/achats/switch-2.md."
  }
 };
 const CODES = [
