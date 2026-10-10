@@ -269,11 +269,11 @@ const FICHES = {
   risk:"Évènement Apple le 13/10 : re-vérifier les prix avant le 28/10 si annonce casque. Rabais employé 15 % à confirmer avec la connaissance (conditions, plafond). Étude : recherches/achats/airpods-max.md."
  },
  switch:{
-  dec:"✅ Décidé : console en France (Noël) · au Japon = accessoires + jeux Switch 2 / S2E — panier ~490 € vs ~870 € FR",
+  dec:"✅ Décidé : console en France (Noël) · au Japon = accessoires + jeux Switch 2 / S2E — panier ~530 € vs ~950 € FR",
   arb:[
    "Console : NON au Japon (version JP verrouillée en japonais ; multilingue vendue en ligne JP seulement) → Black Friday en France.",
    "Cible = jeux SWITCH 2 ou « Switch 2 Edition » (remasters). Cartouches Nintendo = multilingues, français inclus (vérifié). Réflexe : au dos de la boîte, 対応言語 contient フランス語. Pas de jeux tiers (Game-Key Card = carte vide + téléchargement).",
-   "Tout ça ne se lance que sur la Switch 2 → ça attend Noël. Seule exception boîte rouge (Switch 1) : Pokémon Let's Go (pas d'équivalent Switch 2, jouable dès le retour).",
+   "Tout ça ne se lance que sur la Switch 2 → ça attend Noël. Pokémon : on a déjà Let's Go Pikachu ; le dernier principal = Legends Z-A (S2E) ; Winds/Waves = 2027, rien à acheter.",
    "Accessoires : matériel mondial, Bluetooth, sans zone. La console n'a que 2 Joy-Con → une paire de plus pour jouer à 4." ],
   ou:"Nintendo KYOTO (Takashimaya S.C. 7F, Shijō-Kawaramachi — 15 min de l'Airbnb, tax-free ; idéal ven 16) · Nintendo TOKYO (Shibuya Parco 6F) · Bic / Yodobashi (rayon ゲーム, souvent −5-10 %) — tout le même jour, même magasin (≥ 5 000 ¥), passeport, avant le 31/10",
   cands:[
@@ -287,7 +287,8 @@ const FICHES = {
    {m:"Pokémon Pokopia", s:"1 · « Animal Crossing avec des Pokémon », très doux, idéal 6-9 ans · parfois en rupture : le prendre si on le voit", jp:"~8 160 ¥", eur:"≈ 46 € hors taxe", fr:"FR : 79,99 €", v:"Panier", k:"ok"},
    {m:"Animal Crossing: New Horizons — Switch 2 Edition", s:"1-4 · animaux, déco, zéro stress — très Zélie · prix JP à relever en rayon", jp:"~6 800 ¥ ?", eur:"≈ 40 € hors taxe (estimation)", fr:"FR : ~69,99 €", v:"Panier", k:"ok"},
    {m:"Zelda: Breath of the Wild + Tears of the Kingdom — Switch 2 Edition", s:"1 · pour Antoine (Zélie en copilote) · 8 678 ¥ + 8 920 ¥", jp:"~16 000 ¥ les deux", eur:"≈ 45 € + 46 € hors taxe", fr:"FR : 79,99 € × 2", v:"Panier", k:"ok"},
-   {m:"2e cercle : DK Bananza · Yoshi · Pokémon Legends Z-A S2E · Mario Tennis Fever · Kirby Air Riders · grip de charge · microSD Express", s:"Exception boîte rouge : Pokémon Let's Go (~34 €, jouable dès le retour). Détails : recherches/achats/switch-2-jeux-accessoires.md", jpn:"41-46 € pièce hors taxe", fr:"", v:"Si envie", k:"mid"},
+   {m:"Pokémon Legends: Z-A — Switch 2 Edition", s:"1 · le dernier Pokémon principal (Illumis, combats temps réel simplifiés, PEGI 7) · l'étape après Let's Go · une sauvegarde par profil → une partie chacune", jp:"~7 390 ¥", eur:"≈ 42 € hors taxe", fr:"FR : 69,99-79,99 €", v:"Panier", k:"ok"},
+   {m:"2e cercle : DK Bananza · Yoshi · Mario Tennis Fever · Kirby Air Riders · grip de charge · microSD Express", s:"Détails : recherches/achats/switch-2-jeux-accessoires.md", jpn:"41-46 € pièce hors taxe", fr:"", v:"Si envie", k:"mid"},
    {m:"Console Switch 2", s:"JP verrouillée 59 980 ¥ · multilingue 69 980 ¥ en ligne JP seulement", jpn:"non — Black Friday FR", fr:"FR : 499,99 € (promos ~420 €)", v:"Non", k:"no"} ],
   check:[
    {id:"switch-buy-joycon", t:"🛒 Joy-Con 2 (paire)"},
@@ -302,7 +303,7 @@ const FICHES = {
    {id:"switch-buy-acnh", t:"🛒 Animal Crossing: New Horizons — Switch 2 Edition (relever le prix)"},
    {id:"switch-buy-zelda", t:"🛒 Zelda Breath of the Wild — Switch 2 Edition"},
    {id:"switch-buy-zelda2", t:"🛒 Zelda Tears of the Kingdom — Switch 2 Edition"},
-   {id:"switch-buy-letsgo", t:"🛒 (option) Pokémon Let's Go Pikachu ou Évoli — seule boîte rouge, jouable dès le retour"},
+   {id:"switch-buy-za", t:"🛒 Pokémon Legends: Z-A — Switch 2 Edition"},
    {id:"switch-langue", t:"Chaque jeu : au dos, 対応言語 contient フランス語 ; pas de ゲームキーカード"},
    {id:"switch-grouper", t:"Tout le même jour dans le même magasin (≥ 5 000 ¥), passeport original, avant le 31/10"},
    {id:"switch-pas-console", t:"Pas de console japonaise, même en promo (verrouillée)"},
