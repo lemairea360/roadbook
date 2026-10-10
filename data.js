@@ -220,30 +220,35 @@ const FICHES = {
   dec:"✅ Kobo Libra Colour — ~195 € tax-free",
   ou:"Bic Camera / Yodobashi, rayon liseuses (電子書籍リーダー) — réf. : 39 960 ¥ TTC sur Bic Camera.com (9 oct.)",
   cands:[
-   {m:"Kobo Libra Colour", s:"7″ Kaleido 3 couleur · 32 Go · ~200 g · EPUB/MOBI/CBZ/CBR/PDF · IPX8 · boutons", jp:"~36 300 ¥", eur:"≈ 195 € tax-free", fr:"FR : 269,99 €", v:"LE choix", k:"ok"} ],
+   {m:"Kobo Libra Colour", s:"7″ Kaleido 3 couleur · 32 Go · ~200 g · EPUB/MOBI/CBZ/CBR/PDF · IPX8 · boutons · interface plus simple que PocketBook (à tester en démo)", jp:"~36 300 ¥", eur:"≈ 195 € tax-free", fr:"FR : 269,99 €", v:"LE choix", k:"ok"},
+   {m:"Option 0 — pas de liseuse, un bel étui", s:"Si les Paperwhite font le job : étui qu'elle choisit (+ un pour sa sœur). Coque « Paperwhite 2012-2017 » Amazon ~15-25 €, ou pochette tissu 6″ achetée au Japon (Loft, Tokyu Hands, Nippori)", jpn:"~15-30 €", fr:"", v:"Alternative", k:"mid"},
+   {m:"PocketBook InkPad 4 / InkPad Color 3", s:"Essayées en magasin le 10/10 : couleur sympa sur la Color 3, mais interface PocketBook laborieuse (même logiciel sur les deux)", jpn:"non vendues au Japon", fr:"FR : 270 € / 329 €", v:"Éliminées", k:"no"} ],
   check:[
    {id:"liseuse-taxfree", t:"Tax-free (免税) avec passeport, prix ≤ 40 000 ¥ TTC — sinon comparer Bic / Yodobashi / Rakuten"},
    {id:"liseuse-coque", t:"Prendre une coque (SleepCover ou tierce) — la liseuse vivra dans un sac d'école"},
    {id:"liseuse-compte-fr", t:"Le soir au Wi-Fi : compte Kobo français (kobo.com/fr) → interface + boutique FR, vérifier avant de quitter le Japon"},
    {id:"liseuse-facture", t:"Garder la facture tax-free (contrôle douane possible à la sortie)"} ],
-  risk:"Garantie valable au Japon uniquement — risque accepté (Kobo fiables, IPX8 + coque). Plan B si pas achetée : Black Friday FR (~210-230 €). Étude complète : recherches/achats/liseuse.md."
+  risk:"Garantie valable au Japon uniquement — risque accepté (Kobo fiables, IPX8 + coque). Contenu couleur : BD couleur de la boutique Kobo FR + nos CBZ via KCC (profil Kobo Libra Colour). Plan B si pas achetée : Black Friday FR (~210-230 €) ou option 0. Étude complète : recherches/achats/liseuse.md."
  },
  montre:{
-  dec:"🔸 À trancher : Coros Pace 4 (JP ~178 €) vs Garmin FR570 (FR)",
+  dec:"🔸 Duel : Garmin FR265S (France, Black Friday) vs Coros Pace 4 Black Crystal (JP ~211 €) · plan B Apple Watch S12",
   arb:[
-   "1 · Historique Garmin Connect important ? Oui → FR570 42 mm en France (Black Friday, visée < 450 €). Non → Coros Pace 4 au Japon (~178 €, économie > 100 €, Strava se reconnecte).",
-   "2 · Paiement avec la montre / musique en streaming ? Oui → Garmin (la Coros n'a ni l'un ni l'autre).",
-   "3 · Le look Coros « athlète » lui convient-il ? Montrer des photos Pace 4 noir/blanc + FR570 42 mm avant le départ." ],
-  ou:"Coros : Step Sports / Art Sports / Bic / Yodobashi (tax-free à vérifier) · Garmin & Apple : rayon スマートウォッチ Bic / Yodobashi",
+   "Profil Emilie : heure + sport, zéro fonction connectée, veut plus fiable que la Vivoactive 4S et discret → FR570 écartée (micro/HP, Pay, lunette métal inutiles).",
+   "Discrétion + continuité Garmin Connect priment → FR265S en FRANCE au Black Friday (visée < 300 €). Ne PAS l'acheter au Japon : ~278 € tax-free seulement + risques langue/garantie.",
+   "Le prix prime et le look sport passe → Coros Pace 4 au Japon : Black Crystal (lunette alu, moins « plastique ») ~211 € tax-free, standard ~178 €. Nouveau compte, historique Garmin perdu.",
+   "Changement d'avis sur le look → Apple Watch Series 12 42 mm GPS (~353 € tax-free) — mais GPS monofréquence + recharge quotidienne." ],
+  ou:"Coros : Step Sports / Art Sports / Bic / Yodobashi (tax-free à vérifier) · Apple : Apple Store / Bic / Yodobashi · Garmin : rayon スマートウォッチ (seulement pour relever le prix 265S)",
   cands:[
-   {m:"Coros Pace 4", s:"Multibande · 32–40 g · 19 j / 41 h GPS · piscine + eau libre · notifs texte, pas de paiement ni musique", jp:"~33 000 ¥", eur:"≈ 178 € tax-free", fr:"FR : 289–300 €", v:"Choix n°1 si achat JP", k:"ok"},
-   {m:"Garmin Forerunner 570 — 42 mm", s:"Multibande · 42 g · 10 j / 18 h GPS · piscine + eau libre · Pay, musique, appels", jp:"~61 200 ¥", eur:"≈ 330 € (risqué : langue/garantie)", fr:"FR : 469–499 € (Black Friday visé < 450)", v:"Choix n°1 si achat FR", k:"mid"} ],
+   {m:"Garmin Forerunner 265S", s:"41,7 mm · 39 g · multibande · 15 j / 24 h GPS · piscine + eau libre · notifs, Pay, musique · Garmin Connect conservé", jpn:"JP ~56 500 ¥ (≈ 278 € HT) → sans intérêt", fr:"FR : 399 € courant · Black Friday visé < 300 €", v:"Choix n°1 si France", k:"ok"},
+   {m:"Coros Pace 4 Black Crystal", s:"43,4 mm · 32 g (nylon) · multibande · 19 j / 41 h GPS · lunette alu noir mat · notifs texte, pas de paiement", jp:"~39 000 ¥", eur:"≈ 211 € tax-free · standard ~33 000 ¥ ≈ 178 €", fr:"FR : 289 € (standard 269 €)", v:"Choix n°1 si Japon", k:"ok"},
+   {m:"Apple Watch Series 12 — 42 mm alu GPS", s:"GPS monofréquence · ~24 h (recharge quotidienne) · piscine + eau libre · le plus connecté (iPhone obligatoire)", jp:"~65 300 ¥", eur:"≈ 353 € tax-free", fr:"FR : 449 €", v:"Plan B look", k:"mid"} ],
   check:[
-   {id:"montre-taxfree-shop", t:"Coros : réf. 36 300 ¥ TTC (~33 000 ¥ HT) — vérifier que le magasin fait le tax-free (免税)"},
-   {id:"montre-bracelet", t:"Coros : bracelet nylon (32 g) ou silicone (40 g, mieux en piscine) — même prix"},
-   {id:"montre-langue-fr", t:"Si Garmin tentée au Japon : test démo OBLIGATOIRE — Système > Langue (言語) → « Français », sinon NE PAS acheter"},
+   {id:"montre-taxfree-shop", t:"Coros : réf. Black Crystal 42 900 ¥ TTC (~39 000 ¥ HT) / standard 36 300 ¥ — vérifier que le magasin fait le tax-free (免税)"},
+   {id:"montre-bracelet", t:"Coros : bracelet nylon (32 g) ou silicone (40 g, mieux en piscine) — 22 mm standard ; surveiller l'attache (peut se défaire en natation)"},
+   {id:"montre-langue-fr", t:"Garmin : décision = achat en France. Si quand même tentée au Japon : test démo OBLIGATOIRE Système > Langue (言語) → « Français », sinon NE PAS acheter"},
+   {id:"montre-apple-gps", t:"Apple Watch (plan B) : modèle GPS, pas cellulaire (garantie internationale OK sur GPS) ; 42 mm 71 800 ¥ TTC"},
    {id:"montre-facture", t:"Garder la facture tax-free (douane à la sortie)"} ],
-  risk:"Coros : firmware mondial, français inclus, risques faibles. Garmin au Japon : garantie régionale + langue non garantie. Autres candidats écartés (265S, Venu 4, Apple Watch) : recherches/achats/montre.md."
+  risk:"Coros : firmware mondial, français inclus, risques faibles. Garmin au Japon : garantie régionale + langue non garantie → achat France. Écartées : FR570 (fonctions inutiles), Venu 4, Apple Watch SE 3. Étude complète : recherches/achats/montre.md."
  }
 };
 const CODES = [
