@@ -209,9 +209,19 @@ const ACHATS = [
   {id:"liseuse", t:"Liseuse", who:"pour notre fille (9 ans)"},   // fiche détaillée → FICHES.liseuse
   {id:"montre", t:"Montre sport", who:"pour Emilie"},            // fiche détaillée → FICHES.montre
   {id:"switch", t:"Switch 2 · accessoires · jeux", who:"famille"},     // fiche détaillée → FICHES.switch
-  {id:"airpodsmax", t:"AirPods Max 2", who:"pour Antoine"},         // fiche détaillée → FICHES.airpodsmax
-  {id:"souvenirs", t:"Souvenirs filles", who:"les filles", where:"Pokémon Center, Ghibli"},
-  {id:"the", t:"Thé / papeterie", note:"à définir"},
+  // Vêtements & petites listes (recherches/achats/vetements-et-idees.md) — détaxe : grouper ≥ 5 000 ¥ par magasin et par jour, avant le 31/10
+  {id:"vet-doudoune-emilie", t:"Manteau / doudoune", who:"Emilie", where:"Montbell (Superior Down Parka ~¥17-20k) · Uniqlo (Ultra Light Down ~¥7k)"},
+  {id:"vet-bonnet", t:"Bonnet", who:"Antoine", where:"Montbell · Uniqlo HeatTech · Workman"},
+  {id:"vet-running", t:"Chaussures de course (stabilité, = Guide 18)", who:"Antoine", where:"Asics Store / Step Sports / Bic sport", note:"Saucony pas moins cher ici → Asics GT-2000 14 (~¥16,5k ≈ 85 € HT) ou Gel-Kayano 32 (~¥19,8k ≈ 100 €), Mizuno Wave Inspire 21 (~¥15k) · tailles en cm, versions wide"},
+  {id:"vet-cuissard", t:"Cuissard vélo", who:"Antoine", where:"Pearl Izumi Japon (made in Japan) · Y's Road · Rapha Tokyo"},
+  {id:"vet-short-bain", t:"Short de bain", who:"Antoine", where:"Uniqlo · Montbell"},
+  {id:"vet-pull", t:"Pull chaud", who:"Antoine", where:"Montbell Chameece · Uniqlo mérinos / lambswool · Muji", note:"Patagonia = même prix qu'en France, pas d'intérêt"},
+  {id:"vet-brassieres", t:"Brassières", who:"Zélie", where:"Uniqlo Kids (Bratop) · GU"},
+  {id:"vet-polaires", t:"Polaires", who:"les filles", where:"Uniqlo Kids Fluffy Fleece (~¥2k) · Montbell Kids Chameece"},
+  {id:"vet-robes", t:"Robes été / hiver", who:"les filles", where:"Uniqlo Kids · GU · Muji Kids · Nishimatsuya"},
+  {id:"vet-collants", t:"Collants", who:"les filles", where:"Uniqlo HeatTech kids · Muji · Nishimatsuya"},
+  {id:"coque-iphone", t:"Coque iPhone 14 Pro", who:"Antoine", where:"Loft · Tokyu Hands · Yodobashi/Bic (Elecom)", note:"modèle de 3 ans : rayons limités, viser Loft ou Amazon JP"},
+  {id:"makita", t:"Makita : batterie(s) 18V / gadget Japon", who:"Antoine", where:"Yodobashi Akiba (rayon 工具, détaxe) · Yodobashi Kyoto", note:"BL1850B 5 Ah (90 Wh) = OK cabine ; BL1860B 6 Ah = 108 Wh → accord Air China ; PAS de chargeur (100 V). Cafetière CM501D / aspi CL107FD = introuvables en FR"},
 ];
 // Fiches d'achat — source : recherches/achats/liseuse.md & montre.md (relevés du 9 oct. 2026, 1 € ≈ 185 ¥).
 // jp = prix JP tax-free (affiché en gros), jpn = remplaçant quand pas de prix JP, fr = prix France.
@@ -250,7 +260,7 @@ const FICHES = {
    {id:"montre-facture", t:"Garder la facture tax-free (douane à la sortie)"} ],
   risk:"Coros : firmware mondial, français inclus, risques faibles. Garmin au Japon : garantie régionale + langue non garantie → achat France. Écartées : FR570 (fonctions inutiles), Venu 4, Apple Watch SE 3. Étude complète : recherches/achats/montre.md."
  },
- airpodsmax:{
+ airpodsmax_abandonne:{ // conservé pour mémoire (décision 10/10 : pas d'achat) — pas dans ACHATS donc non affiché
   dec:"🔸 Oui/non : JP ~461 € hors taxe (taux 177) vs FR −15 % employé = 492 € → gain 30-50 € seulement",
   arb:[
    "Référence à battre : Apple FR 579 € − 15 % (rabais employé) = 492 €. Prix FR inchangé depuis avril.",
