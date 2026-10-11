@@ -221,8 +221,6 @@ const ACHATS = [
   {id:"vet-robes", t:"Robes été / hiver", who:"les filles", where:"Uniqlo Kids · GU · Muji Kids · Nishimatsuya"},
   {id:"vet-collants", t:"Collants", who:"les filles", where:"Uniqlo HeatTech kids · Muji · Nishimatsuya"},
   {id:"coque-iphone", t:"Coque iPhone 14 Pro", who:"Antoine", where:"Loft · Tokyu Hands · Yodobashi/Bic (Elecom)", note:"modèle de 3 ans : rayons limités, viser Loft ou Amazon JP"},
-  {id:"makita", t:"Makita : batterie(s) 18V / gadget Japon", who:"Antoine", where:"Yodobashi Akiba (rayon 工具, détaxe) · Yodobashi Kyoto", note:"BL1850B 5 Ah (90 Wh) = OK cabine ; BL1860B 6 Ah = 108 Wh → accord Air China ; PAS de chargeur (100 V). Cafetière CM501D / aspi CL107FD = introuvables en FR"},
-  {id:"makita-usb", t:"Makita adaptateur USB sur batterie", who:"Antoine", where:"Yodobashi, rayon Makita", note:"Viser l'ADP15 (USB-C PD ~100 W + USB-A : téléphone, tablette, PC portable) plutôt que l'ADP05 (2× USB-A 5 V/2,1 A : téléphone seulement, lent). Existe en France (ADP05 ~30 €) — n'acheter ici que si l'ADP15 est en rayon et nettement moins cher"},
   {id:"casque-sony", t:"Casque Sony WH-1000XM6", who:"Antoine", where:"Bic Camera / Yodobashi / Sony Store Ginza", note:"~¥59k TTC → ~¥54k HT ≈ 300 € vs ~450 € FR (−30 %) · modèle mondial, appli en français · l'alternative aux AirPods Max · avant le 31/10"},
 ];
 // Fiches d'achat — source : recherches/achats/liseuse.md & montre.md (relevés du 9 oct. 2026, 1 € ≈ 185 ¥).
