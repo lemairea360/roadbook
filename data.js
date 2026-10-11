@@ -347,8 +347,10 @@ const DETAXE_NOTE = "⚠️ Détaxe : −10 % immédiat en caisse <b>jusqu'au 31
 // Rappels « Avant le départ » (carte affichée tant qu'on est avant DAYS[0].d) — une chaîne = une ligne.
 const PREDEP = [
   "Check-in Air China en ligne — ~lun 12/10",
-  "Billets musée Ghibli — verdict cousin dim 11/10",
+  "📱 Forfait Antoine : basculer sur B&You Voyage (40 Go Japon) OU installer l'eSIM Ubigi — itinérance B&You coupée",
+  "🎢 Créer le compte Tokyo Disney Resort (billets datés achetés la veille, le 2 ou le 4/11)",
   "Messages aux hôtes à envoyer (heures d'arrivée)",
-  "Héberger + installer le roadbook sur les 2 iPhones",
-  "🚲 Réserver vélos + sièges enfants pour Kyoto"
+  "Installer le roadbook sur les 2 iPhones + test mode avion",
+  "⬇️ Google Maps hors-ligne (Kiso, Shirahone, Hakone, Izu) + Translate japonais",
+  "🚲 Vélos Kyoto : décision + résa (recherches/velos-kyoto.md)"
 ];
