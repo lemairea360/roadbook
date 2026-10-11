@@ -43,8 +43,9 @@ const PNR_A=atob("RU9HSkNK"), PNR_R=atob("RU9TOEtO"), CONF_A=atob("UFhXOEhC"), C
 const DAYS = [
  {d:"2026-10-13", t:"Décollage de Genève", ph:"Vol", sleep:"avion",
   prat:[{t:"✈️ "+PNR_A, copy:PNR_A}],
-  alerts:["Aéroport GVA à 10h30 (vol 13:20) — QR Visit Japan Web hors-ligne ×4"],
-  plan:[{w:"13:20",x:"CA862 GVA → Pékin (10h05 de vol)"},{w:"nuit",x:"Arrivée PEK 05:25, correspondance 3h15"}]},
+  plan:[{w:"08:00",x:"Départ de la maison en voiture 🚗 (papa nous emmène)"},
+        {w:"10:00",x:"Arrivée à l'aéroport de Genève ✈️", maps:"Geneva Airport"},
+        {w:"13:20",x:"CA862 GVA → Pékin (10h05 de vol)"},{w:"nuit",x:"Arrivée PEK 05:25, correspondance 3h15"}]},
  {d:"2026-10-14", t:"Arrivée au Japon → Kyoto", ph:"Kyoto", sleep:"kyoto",
   prat:[{t:"✈️ "+PNR_A, copy:PNR_A},{t:"📱 Data → Ubigi", copy:"Settings → Mobile Service → Mobile Data → Ubigi"}],
   plan:[{w:"08:40",x:"CA927 Pékin → Osaka KIX (arrivée 12:40)"},
