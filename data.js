@@ -339,7 +339,7 @@ const INFOS = [
   {h:"💳 Argent (logistique/argent.md)", list:["Toujours payer et retirer en JPY (jamais en euros proposés par le terminal)",
     "Antoine (Revolut) = voiture + achats tax-free (passeport de l'acheteur) · Emilie (Revolut) = quotidien · Visa Premier = secours + assurance",
     "Cash : Seven Bank (7-Eleven, 24h, aussi à KIX) — ¥50k chacun à l'arrivée, puis ¥30-50k à la fois, depuis la poche yens",
-    "Recharger la poche yens Revolut EN SEMAINE seulement (week-end = +1 %) · plafond gratuit 1 000 €/mois/compte, puis 1 %",
+    "Antoine = Premium (change illimité, sans majoration) · Emilie = Standard : recharger sa poche yens EN SEMAINE seulement (week-end +1 %), 1 000 €/mois gratuits puis 1 %",
     "Cash indispensable : ryokan (taxe onsen), Tsumago/Magome, temples, petits restos, parkings à bornes, laveries"]},
   {h:"💴 À ne pas oublier", list:["Cash : taxe onsen (¥150/pers = ¥600), bus Tsumago→Magome (horaires à vérifier la veille), parking Tsumago ~¥500",
     "Péages = carte ETC, soldés à la restitution Nihonbashi",
@@ -353,7 +353,7 @@ const DETAXE_NOTE = "⚠️ Détaxe : −10 % immédiat en caisse <b>jusqu'au 31
 // Rappels « Avant le départ » (carte affichée tant qu'on est avant DAYS[0].d) — une chaîne = une ligne.
 const PREDEP = [
   "Check-in Air China en ligne — ~lun 12/10",
-  "💳 Lun/mar : convertir 1 000 € → ¥ sur chaque Revolut (en semaine) · cartes : swipe ON, PIN connu · (option Plus 3,99 € sur Antoine)",
+  "💳 Lun/mar : convertir 1 000 € → ¥ sur le Revolut d'Emilie (en semaine) · Antoine = Premium offert 2 mois (change illimité, 400 € retraits) → noter la date de fin d'essai · cartes : swipe ON, PIN connu",
   "📱 À Osaka : Settings → Mobile Service → Mobile Data → Ubigi (eSIM installée, itinérance B&You coupée)",
   "🎢 Créer le compte Tokyo Disney Resort (billets datés achetés la veille, le 2 ou le 4/11)",
   "Messages aux hôtes à envoyer (heures d'arrivée)",
