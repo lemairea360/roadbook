@@ -44,7 +44,8 @@ const RUN_KYOTO = [{t:"🏃 Kamo 21 km", href:"https://www.strava.com/routes/354
                    {t:"🏃 Daimonji 14 km", href:"https://www.strava.com/routes/3544344586790296632"}];
 const RUN_ENA = [{t:"🏃 Kasagi 13 km +730", href:"https://www.strava.com/routes/3544377854381433896"}];
 const RUN_HAKONE = [{t:"🏃 Lac Ashi 20 km (voiture → Moto-Hakone)", href:"https://www.strava.com/routes/3544388554056617000"}];
-const RUN_KAWAGUCHIKO = [{t:"🏃 Kurodake 12 km +1000 (rive nord, voiture)", href:"https://www.strava.com/routes/3544389293908434984"}];
+const RUN_KAWAGUCHIKO = [{t:"🏃 Kurodake court 12 km +1030", href:"https://www.strava.com/routes/3544394624703738920"},
+                        {t:"🏃 Kurodake long 20 km +1440", href:"https://www.strava.com/routes/3544389293908434984"}];
 // PNR avion encodés (base64) : un PNR + nom de famille suffit à gérer un vol → on évite le texte en clair dans un repo public.
 const PNR_A=atob("RU9HSkNK"), PNR_R=atob("RU9TOEtO"), CONF_A=atob("UFhXOEhC"), CONF_R=atob("TkoxSFhF");
 const DAYS = [
