@@ -38,6 +38,11 @@ const SLEEPS = {
 };
 // Chips « pratique aujourd'hui » (champ prat des jours) : copy = copie au tap, tel = appel.
 const WIFI_TOKYO = {t:"📶 Wifi 12ry4in6", copy:"12ry4in6"};
+// Sorties course à pied : chips → lien de route Strava (ouvre l'app Strava, bouton « Utiliser l'itinéraire »). Détail : recherches/running-kyoto.md
+const RUN_KYOTO = [{t:"🏃 Kamo 21 km", href:"https://www.strava.com/routes/3544371936500593704"},
+                   {t:"🏃 Inari 14 km", href:"https://www.strava.com/routes/3544347453969355832"},
+                   {t:"🏃 Daimonji 14 km", href:"https://www.strava.com/routes/3544344586790296632"}];
+const RUN_ENA = [{t:"🏃 Kasagi 13 km +730", href:"https://www.strava.com/routes/3544377854381433896"}];
 // PNR avion encodés (base64) : un PNR + nom de famille suffit à gérer un vol → on évite le texte en clair dans un repo public.
 const PNR_A=atob("RU9HSkNK"), PNR_R=atob("RU9TOEtO"), CONF_A=atob("UFhXOEhC"), CONF_R=atob("TkoxSFhF");
 const DAYS = [
@@ -53,36 +58,36 @@ const DAYS = [
         {w:"aprèm",x:"Immigration + douane (kiosques intégrés) → train Haruka → Kyoto (~80 min)", maps:"Kyoto Station"},
         {w:"soir",x:"Check-in, repas simple dans Gion, coucher tôt (décalage)"}],
   alerts:["📱 Antoine : basculer les données sur Ubigi dès l'atterrissage (B&You reste en itinérance coupée)","Instructions self check-in reçues la veille sur Airbnb (plan B : comptoir RESI STAY près de la gare)"]},
- {d:"2026-10-15", t:"Kyoto à vélo — temples de l'est 🚲", ph:"Kyoto", sleep:"kyoto", menu:true,
+ {d:"2026-10-15", t:"Kyoto à vélo — temples de l'est 🚲", ph:"Kyoto", sleep:"kyoto", menu:true, prat:[...RUN_KYOTO],
   plan:[{w:"matin",x:"Récupérer les vélos (+ sièges enfants) puis Nanzen-ji (le « gros temple »)", maps:"Nanzen-ji Kyoto"},
         {w:"midi",x:"Chemin de la philosophie à vélo, pique-nique au bord du canal", maps:"Philosopher's Path Kyoto"},
         {w:"aprèm",x:"Okazaki shrine — le sanctuaire aux lapins 🐇", maps:"Okazaki Shrine Kyoto"}]},
- {d:"2026-10-16", t:"Kyoto à vélo — jardin botanique & Gion 🚲", ph:"Kyoto", sleep:"kyoto", menu:true,
+ {d:"2026-10-16", t:"Kyoto à vélo — jardin botanique & Gion 🚲", ph:"Kyoto", sleep:"kyoto", menu:true, prat:[...RUN_KYOTO],
   plan:[{w:"matin",x:"Remonter la rivière Kamo à vélo → jardin botanique", maps:"Kyoto Botanical Gardens"},
         {w:"aprèm",x:"Boutiques + quartier de Gion à pied"},
         {w:"option",x:"Spectacle geiko/maiko au musée d'art Gion Kagai (représentations 13:30 / 14:20 / 15:00 / 16:00 / 16:30)", maps:"Gion Kagai Art Museum"}]},
- {d:"2026-10-17", t:"Kyoto à vélo — Fushimi Inari 🚲⛩️", ph:"Kyoto", sleep:"kyoto", menu:true,
+ {d:"2026-10-17", t:"Kyoto à vélo — Fushimi Inari 🚲⛩️", ph:"Kyoto", sleep:"kyoto", menu:true, prat:[...RUN_KYOTO],
   alerts:["Samedi = foule à Fushimi → partir TÔT (sur place avant 9h)"],
   plan:[{w:"matin",x:"Fushimi Inari à vélo (~30 min par la rivière), torii rouges jusqu'au belvédère Yotsutsuji", maps:"Fushimi Inari Taisha"},
         {w:"aprèm",x:"Retour tranquille, repos ou Nishiki Market"}]},
- {d:"2026-10-18", t:"Nara en train 🦌", ph:"Kyoto", sleep:"kyoto", menu:true,
+ {d:"2026-10-18", t:"Nara en train 🦌", ph:"Kyoto", sleep:"kyoto", menu:true, prat:[...RUN_KYOTO],
   alerts:["Dimanche chargé → partir tôt (train direct ~45 min)"],
   plan:[{w:"matin",x:"Daims + crackers, Tōdai-ji (Grand Bouddha)", maps:"Nara Park"},
         {w:"aprèm",x:"Mochi pilés en spectacle chez Nakatanidou, retour Kyoto", maps:"Nakatanidou Nara"}]},
- {d:"2026-10-19", t:"Arashiyama + préparatifs 🎋", ph:"Kyoto", sleep:"kyoto", menu:true,
+ {d:"2026-10-19", t:"Arashiyama + préparatifs 🎋", ph:"Kyoto", sleep:"kyoto", menu:true, prat:[...RUN_KYOTO],
   alerts:["💬 Message à Aya & Fabrizzio (Ena, Airbnb) : heure d'arrivée de demain (~16h30-17h30) + idée dîner — accueil en personne","Ce soir : cash ¥, onigiri pour le trek de mercredi, valises réorganisées pour la voiture"],
   plan:[{w:"matin",x:"Bambous d'Arashiyama tôt (avant 9h) + pont Togetsukyō", maps:"Arashiyama Bamboo Grove"},
         {w:"option",x:"Singes d'Iwatayama (montée 20 min)", maps:"Iwatayama Monkey Park"},
         {w:"aprèm",x:"Retour, préparatifs road trip"}]},
  {d:"2026-10-20", t:"Nagoya → Ena · la voiture !", ph:"Road trip", sleep:"ena",
-  prat:[{t:"🚗 RC52461258775729685", copy:"RC52461258775729685"},{t:"☎ Agence Nagoya", tel:"0524520100"}],
+  prat:[{t:"🚗 RC52461258775729685", copy:"RC52461258775729685"},{t:"☎ Agence Nagoya", tel:"0524520100"},...RUN_ENA],
   alerts:["Résa Toyota = 9h00 : si arrivée ~10h45, PRÉVENIR l'agence (052-452-0100) — retard non prévenu = résa annulable",
           "Agence Toyota : payer ¥152 130 au comptoir — Revolut + permis + traduction JAF + passeport",
           "Prévenir Aya & Fabrizzio de l'heure d'arrivée (message Airbnb)"],
   plan:[{w:"matin",x:"Shinkansen Kyoto → Nagoya (35 min) · 10h45 agence Toyota, sortie Taiko-dori", maps:"Toyota Rent a Car Nagoya Shinkansen Exit"},
         {w:"aprèm",x:"Au choix : Science Museum (planétarium géant) OU Magome au couchant", maps:"Nagoya City Science Museum"},
         {w:"17:00",x:"Check-in Ena (sortie Ena IC puis rte 68, 25 min)", maps:"3960 Nakanohōchō Ena"}]},
- {d:"2026-10-21", t:"Trek Nakasendo → ryokan", ph:"Road trip", sleep:"tsuruya",
+ {d:"2026-10-21", t:"Trek Nakasendo → ryokan", ph:"Road trip", sleep:"tsuruya", prat:[...RUN_ENA],
   alerts:["ARRIVER AU TSURUYA AVANT 18H (dîner kaiseki)","Taxe onsen ¥600 en espèces","Sacs anti-nausée (derniers km sinueux) 🤢"],
   plan:[{w:"08:15",x:"Route → parking Tsumago (~¥500), bus ~9h vers Magome", maps:"Tsumago parking"},
         {w:"09:40",x:"Marche Magome → Tsumago · 8 km · ~3h 🥾", maps:"Magome-juku"},
