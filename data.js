@@ -46,6 +46,9 @@ const RUN_ENA = [{t:"🏃 Kasagi 13 km +730", href:"https://www.strava.com/route
 const RUN_HAKONE = [{t:"🏃 Lac Ashi 20 km (voiture → Moto-Hakone)", href:"https://www.strava.com/routes/3544388554056617000"}];
 const RUN_KAWAGUCHIKO = [{t:"🏃 Kurodake court 12 km +1030", href:"https://www.strava.com/routes/3544394624703738920"},
                         {t:"🏃 Kurodake long 20 km +1440", href:"https://www.strava.com/routes/3544389293908434984"}];
+const RUN_IZU = [{t:"🏃 Ōmuro 6 km (⚠️ pas de montée à pied)", href:"https://www.strava.com/routes/3544419005968473204"},
+                 {t:"🏃 Côte Jōgasaki 18 km +740", href:"https://www.strava.com/routes/3544419005966095476"},
+                 {t:"🏃 Lacs Ippeki 18 km +480", href:"https://www.strava.com/routes/3544427026113557620"}];
 // PNR avion encodés (base64) : un PNR + nom de famille suffit à gérer un vol → on évite le texte en clair dans un repo public.
 const PNR_A=atob("RU9HSkNK"), PNR_R=atob("RU9TOEtO"), CONF_A=atob("UFhXOEhC"), CONF_R=atob("TkoxSFhF");
 const DAYS = [
@@ -123,11 +126,13 @@ const DAYS = [
         {w:"14:00",x:"Izu Skyline (si beau) ou côte est", maps:"Izu Skyline"},
         {w:"16:00",x:"Check-in Kiraboshi no sato · plage si timing OK", maps:"Kiraboshi no sato Ito"}]},
  {d:"2026-10-26", t:"Izu : falaises, volcan, capybaras", ph:"Road trip", sleep:"izu",
+  prat:[...RUN_IZU],
   plan:[{w:"09:00",x:"Jōgasaki Coast : falaises + pont suspendu", maps:"Jogasaki Coast"},
         {w:"11:00",x:"Mont Ōmuro : télésiège + tour du cratère", maps:"Mount Omuro"},
         {w:"14:00",x:"Shaboten Zoo : nourrir les capybaras 🦫", maps:"Izu Shaboten Zoo"},
         {w:"16:30",x:"Plage ou cheminée à la maison"}]},
  {d:"2026-10-27", t:"Izu : cascades & plage", ph:"Road trip", sleep:"izu",
+  prat:[...RUN_IZU],
   alerts:["💬 Si envie d'arriver tôt à Tokyo demain : demander ce soir à Toshiko (Airbnb) un dépôt des valises ~13h (sinon : pause sympa sur la route, check-in 15h)"],
   plan:[{w:"09:00",x:"Kawazu Nanadaru : 7 cascades + glace au wasabi 💦", maps:"Kawazu Nanadaru"},
         {w:"14:00",x:"Plage (Usami ou Izu-kōgen) — châteaux de sable", maps:"Usami beach"},
@@ -241,6 +246,7 @@ const ACHATS = [
   {id:"vet-robes", t:"Robes été / hiver", who:"les filles", where:"Uniqlo Kids · GU · Muji Kids · Nishimatsuya"},
   {id:"vet-collants", t:"Collants", who:"les filles", where:"Uniqlo HeatTech kids · Muji · Nishimatsuya"},
   {id:"coque-iphone", t:"Coque iPhone 14 Pro", who:"Antoine", where:"Loft · Tokyu Hands · Yodobashi/Bic (Elecom)", note:"modèle de 3 ans : rayons limités, viser Loft ou Amazon JP"},
+  {id:"cloche-ours", t:"🔔 Clochette à ours", who:"Antoine", where:"Daiso (~¥110-220, rayon outdoor) ou Montbell Kyoto Shinkyōgoku 11h-20h (~¥1 500-2 500, avec silencieux)", note:"Dès les premiers jours à Kyoto — sert au Kasagi (20-21/10), à Shirahone (22/10) et au Kurodake (23/10)"},
   {id:"casque-sony", t:"Casque Sony WH-1000XM6", who:"Antoine", where:"Bic Camera / Yodobashi / Sony Store Ginza", note:"~¥59k TTC → ~¥54k HT ≈ 300 € vs ~450 € FR (−30 %) · modèle mondial, appli en français · l'alternative aux AirPods Max · avant le 31/10"},
 ];
 // Fiches d'achat — source : recherches/achats/liseuse.md & montre.md (relevés du 9 oct. 2026, 1 € ≈ 185 ¥).
