@@ -51,7 +51,8 @@ const RUN_IZU = [{t:"🏃 Ōmuro base 5 km", href:"https://www.strava.com/routes
                  {t:"🏃 Lacs Ippeki 18 km +480", href:"https://www.strava.com/routes/3544427026113557620"}];
 const RUN_TOKYO = [{t:"🏃 Palais impérial 13 km", href:"https://www.strava.com/routes/3544446070342428712"},
                    {t:"🏃 Sumida 10 km", href:"https://www.strava.com/routes/3544450714022932588"},
-                   {t:"🏃 Longue Sumida + Palais 18 km", href:"https://www.strava.com/routes/3544443022670495860"}];
+                   {t:"🏃 Longue Sumida + Palais 18 km", href:"https://www.strava.com/routes/3544443022670495860"},
+                   {t:"🏃 Vert Yanaka · Nezu · Tōdai 8 km", href:"https://www.strava.com/routes/3544451724094938070"}];
 // PNR avion encodés (base64) : un PNR + nom de famille suffit à gérer un vol → on évite le texte en clair dans un repo public.
 const PNR_A=atob("RU9HSkNK"), PNR_R=atob("RU9TOEtO"), CONF_A=atob("UFhXOEhC"), CONF_R=atob("TkoxSFhF");
 const DAYS = [
@@ -388,5 +389,5 @@ const PREDEP = [
   "Installer le roadbook sur les 2 iPhones + test mode avion",
   "⬇️ Google Maps hors-ligne (Kiso, Shirahone, Hakone, Izu) + Translate japonais",
   "🚲 Vélos Kyoto : décision + résa après réponse RESI STAY (recherches/velos-kyoto.md)",
-  "(optionnel) 🏃 Itinéraires course Kyoto : Kamo nord 12-18 km · Fushimi Inari à l'aube 13 km · Daimonji trail 16 km · boucle temples 10 km — tracés à recaler sur Strava (recherches/running-kyoto.md)"
+  "✅ 🏃 Itinéraires course : tous tracés dans Strava (Kyoto, Ena, Kawaguchiko, Hakone, Izu, Tokyo) → chips 🏃 sur chaque fiche jour",
 ];
