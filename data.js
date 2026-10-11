@@ -44,6 +44,7 @@ const RUN_KYOTO = [{t:"🏃 Kamo 21 km", href:"https://www.strava.com/routes/354
                    {t:"🏃 Daimonji 14 km", href:"https://www.strava.com/routes/3544344586790296632"}];
 const RUN_ENA = [{t:"🏃 Kasagi 13 km +730", href:"https://www.strava.com/routes/3544377854381433896"}];
 const RUN_HAKONE = [{t:"🏃 Lac Ashi 20 km (voiture → Moto-Hakone)", href:"https://www.strava.com/routes/3544388554056617000"}];
+const RUN_KAWAGUCHIKO = [{t:"🏃 Kurodake 12 km +1000 (rive nord, voiture)", href:"https://www.strava.com/routes/3544389293908434984"}];
 // PNR avion encodés (base64) : un PNR + nom de famille suffit à gérer un vol → on évite le texte en clair dans un repo public.
 const PNR_A=atob("RU9HSkNK"), PNR_R=atob("RU9TOEtO"), CONF_A=atob("UFhXOEhC"), CONF_R=atob("TkoxSFhF");
 const DAYS = [
@@ -102,6 +103,7 @@ const DAYS = [
         {w:"15:30",x:"Lac Kawaguchi + télésiège Kachi-Kachi 🗻", maps:"Kachi Kachi Ropeway"},
         {w:"17:00",x:"Check-in dôme · BBQ si commandé · ciel étoilé ✨"}]},
  {d:"2026-10-23", t:"(Chureito) → Gotemba → Hakone", ph:"Road trip", sleep:"hakone",
+  prat:[...RUN_KAWAGUCHIKO],
   alerts:["COURSES À GOTEMBA pour 2 jours (quasi rien à Hakone)","Docs de la villa à télécharger AVANT (réseau faible)"],
   plan:[{w:"07:30",x:"Si ciel dégagé : pagode Chureito (400 marches, LA photo)", maps:"Chureito Pagoda"},
         {w:"11:00",x:"Courses + déjeuner à Gotemba", maps:"Gotemba supermarket"},
