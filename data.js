@@ -361,5 +361,6 @@ const PREDEP = [
   "Messages aux hôtes à envoyer (heures d'arrivée)",
   "Installer le roadbook sur les 2 iPhones + test mode avion",
   "⬇️ Google Maps hors-ligne (Kiso, Shirahone, Hakone, Izu) + Translate japonais",
-  "🚲 Vélos Kyoto : décision + résa (recherches/velos-kyoto.md)"
+  "🚲 Vélos Kyoto : décision + résa après réponse RESI STAY (recherches/velos-kyoto.md)",
+  "(optionnel) 🏃 Itinéraires course Kyoto : Kamo nord 12-18 km · Fushimi Inari à l'aube 13 km · Daimonji trail 16 km · boucle temples 10 km — tracés à recaler sur Strava (recherches/running-kyoto.md)"
 ];
