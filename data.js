@@ -43,6 +43,7 @@ const RUN_KYOTO = [{t:"🏃 Kamo 21 km", href:"https://www.strava.com/routes/354
                    {t:"🏃 Inari 14 km", href:"https://www.strava.com/routes/3544347453969355832"},
                    {t:"🏃 Daimonji 14 km", href:"https://www.strava.com/routes/3544344586790296632"}];
 const RUN_ENA = [{t:"🏃 Kasagi 13 km +730", href:"https://www.strava.com/routes/3544377854381433896"}];
+const RUN_HAKONE = [{t:"🏃 Lac Ashi 20 km (voiture → Moto-Hakone)", href:"https://www.strava.com/routes/3544388554056617000"}];
 // PNR avion encodés (base64) : un PNR + nom de famille suffit à gérer un vol → on évite le texte en clair dans un repo public.
 const PNR_A=atob("RU9HSkNK"), PNR_R=atob("RU9TOEtO"), CONF_A=atob("UFhXOEhC"), CONF_R=atob("TkoxSFhF");
 const DAYS = [
@@ -107,10 +108,12 @@ const DAYS = [
         {w:"14:00",x:"Téléphérique Owakudani (œufs noirs 🥚)", maps:"Owakudani"},
         {w:"16:00",x:"Check-in villa → onsen privé 24h/24 🎉", maps:"443-155 Kowakudani Hakone"}]},
  {d:"2026-10-24", t:"Hakone : art & barbotage", ph:"Road trip", sleep:"hakone",
+  prat:[...RUN_HAKONE],
   plan:[{w:"09:00",x:"Open-Air Museum à l'ouverture (Woods of Net, bain de pieds)", maps:"Hakone Open-Air Museum"},
         {w:"14:00",x:"Yunessun : onsen en maillot (bains café, thé, vin)", maps:"Hakone Kowakien Yunessun"},
         {w:"soir",x:"BBQ à la villa (si demandé) + onsen privé"}]},
  {d:"2026-10-25", t:"Skywalk → péninsule d'Izu", ph:"Road trip", sleep:"izu",
+  prat:[...RUN_HAKONE],
   alerts:["Décision météo du matin : Izu Skyline si ciel clair, sinon côte R135"],
   plan:[{w:"09:00",x:"Mishima Skywalk : pont suspendu + tyrolienne 🌉", maps:"Mishima Skywalk"},
         {w:"12:30",x:"Déjeuner unagi à Mishima"},
