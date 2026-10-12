@@ -252,6 +252,7 @@ const ACHATS = [
   {id:"vet-robes", t:"Robes été / hiver", who:"les filles", where:"Uniqlo Kids · GU · Muji Kids · Nishimatsuya"},
   {id:"vet-collants", t:"Collants", who:"les filles", where:"Uniqlo HeatTech kids · Muji · Nishimatsuya"},
   {id:"coque-iphone", t:"Coque iPhone 14 Pro", who:"Antoine", where:"Loft · Tokyu Hands · Yodobashi/Bic (Elecom)", note:"modèle de 3 ans : rayons limités, viser Loft ou Amazon JP"},
+  {id:"airtags", t:"🏷️ AirTags ×4", who:"Antoine", where:"Apple Store Kyoto (Shijō, détaxe passeport) ou Bic Camera gare de Kyoto / Yodobashi — ~¥4 980 l'unité, ~¥16 800 les 4 (à vérifier)", note:"Pour les filles sur place (poche zippée ou bracelet). Marchent pareil en France : aucun verrouillage régional. Après activation : Localiser → l'AirTag → Partager avec Emilie, sinon son iPhone recevra des alertes « AirTag détecté » quand elle est seule avec une fille"},
   {id:"cloche-ours", t:"🔔 Clochette à ours", who:"Antoine", where:"Daiso (~¥110-220, rayon outdoor) ou Montbell Kyoto Shinkyōgoku 11h-20h (~¥1 500-2 500, avec silencieux)", note:"Dès les premiers jours à Kyoto — sert au Kasagi (20-21/10), à Shirahone (22/10) et au Kurodake (23/10)"},
   {id:"casque-sony", t:"Casque Sony WH-1000XM6", who:"Antoine", where:"Bic Camera / Yodobashi / Sony Store Ginza", note:"~¥59k TTC → ~¥54k HT ≈ 300 € vs ~450 € FR (−30 %) · modèle mondial, appli en français · l'alternative aux AirPods Max · avant le 31/10"},
 ];
