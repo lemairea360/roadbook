@@ -261,7 +261,7 @@ const ACHATS = [
   {id:"coque-iphone", t:"Coque iPhone 14 Pro", who:"Antoine", where:"Loft · Tokyu Hands · Yodobashi/Bic (Elecom)", note:"modèle de 3 ans : rayons limités, viser Loft ou Amazon JP"},
   {id:"cartouche-chalana", t:"🖋️ Cartouches Sailor Chalana", who:"pour maman"},   // fiche détaillée → FICHES['cartouche-chalana']
   {id:"appareil-photo-flora", t:"📷 Appareil photo", who:"pour Flora"},   // fiche détaillée → FICHES['appareil-photo-flora']
-  {id:"peluches-raplapla", t:"🧸 Peluches « raplapla » (Liv Heart Nemu Nemu)", who:"pour les filles"},   // fiche détaillée → FICHES['peluches-raplapla']
+  {id:"peluches-raplapla", t:"🧸 Peluches « raplapla » (Liv Heart, format Bolster)", who:"pour les filles"},   // fiche détaillée → FICHES['peluches-raplapla']
   {id:"airtags", t:"🏷️ AirTags ×4 (pour les filles sur place)", who:"Antoine", where:"Apple Store Kyoto (Shijō, détaxe) · Bic Camera gare de Kyoto · Yodobashi", note:"Pack de 4 : ¥18 400 TTC, ~¥16 700 détaxé (~95 €, = revendeurs FR). Dès l'activation : Localiser → AirTag → Partager avec Emilie (sinon alertes « AirTag détecté »)"},
   {id:"cloche-ours", t:"🔔 Clochette à ours", who:"Antoine", where:"Daiso (~¥110-220, rayon outdoor) · Montbell Kyoto Shinkyōgoku (~¥1 500-2 500, avec silencieux)", note:"À prendre dès Kyoto — sert au Kasagi (20-21/10), à Shirahone (22/10) et au Kurodake (23/10)"},
   {id:"casque-sony", t:"Casque Sony WH-1000XM6", who:"Antoine", where:"Bic Camera / Yodobashi / Sony Store Ginza", note:"~¥59k TTC → ~¥54k HT ≈ 300 € vs ~450 € FR (−30 %) · modèle mondial, appli en français · l'alternative aux AirPods Max · avant le 31/10"},
@@ -313,22 +313,25 @@ const FICHES = {
   risk:"Produit abandonné : aucune garantie d'en trouver ; l'encre d'une boîte ancienne peut avoir séché (le vendeur Mercari ne garantit pas). Étude : recherches/stylo-chalana.md"
  },
  "peluches-raplapla":{
-  dec:"✅ Liv Heart « Nemu Nemu Animals » (ねむねむアニマルズ) — Yodobashi Kyoto / Ueno (stock par magasin sur yodobashi.com) ou Loft",
+  dec:"✅ Format « Bolster » (ボルスター, ~27 cm couché, ~¥1 780) · en magasin, seul Yodobashi Umeda (Osaka) en a vraiment (15 modèles le 12/10) · Kyoto, Ueno, Bic Camera : aucun",
   arb:[
-   "C'est bien ça : marque りぶはあと / LIV HEART (Osaka), gamme ねむねむアニマルズ. Les « raplapla » = les 抱きまくら (coussins à câliner) Premium Nemu Nemu, 3 tailles + mascottes.",
-   "Souvent au rayon coussins / literie (抱き枕), pas au rayon jouets. Demander « りぶはあと の ねむねむアニマルズ » + montrer une photo de la collection.",
-   "Boutique officielle en ligne en refonte (catalogue vide le 12/10) : inutilisable. Mercari pour les modèles retirés (via le cousin)." ],
-  ou:"Yodobashi Kyoto (gare) ou Yodobashi Ueno (5 min de l'Airbnb) — 729 réf. Liv Heart, stock affiché par magasin sur chaque fiche yodobashi.com (« 在庫のある店舗 ») · Kyoto Loft (Mina Kyoto, Kawaramachi-Sanjō, 11h-21h, 20 min à pied) · Shibuya Loft (le 31/10) · Ginza Loft · Hands · Bic Camera",
+   "Sur le site Liv Heart, « Bolster » = le petit coussin couché de ~27 cm (15 × 27 × 14 cm). Ce n'est PAS le « Hug Pillow » (抱きまくら M/L, 56-70 cm).",
+   "Les Bolster Nemu Nemu d'origine (こんた, ぽんきち, 2020) ne sont quasi plus produits. Le même format continue sous マシュマロアニマル ボルスター (animaux) et マシュマロアクアミエ ボルスター (animaux marins) : même marque, même toucher.",
+   "Stock magasins relevé le 12/10 sur yodobashi.com : Umeda (Osaka) 15 modèles · Utsunomiya ~11 (hors trajet) · Shinjuku : la grenouille seule · Kyoto, Ueno, Akiba : 0. Bic Camera : 0 dans tous ses magasins.",
+   "Hands et Loft : sites bloqués depuis la France, non vérifiable. À demander en passant (Hands et Loft à Kyoto, Shibuya Loft le 31/10).",
+   "Tout est marqué « 在庫残少 » (dernières pièces) : ça peut partir avant notre passage." ],
+  ou:"Yodobashi Multimedia Umeda, Osaka (collé à la gare JR Osaka, 9h30-22h), rayon peluches / coussins · ~30 min de Kyoto en JR Special Rapid · Repli : commande yodobashi.com, livraison gratuite en 1-2 jours à l'Airbnb (Kyoto ou Tokyo) · À tenter sans garantie : Hands Kyoto, Kyoto Loft, Shibuya Loft",
   cands:[
-   {m:"Premium Nemu Nemu お座り S (assis, poche au dos)", s:"13 × 13 × 18 cm", jp:"¥1 780-1 900", eur:"≈ 10 €", fr:"FR : import ~25-35 €", v:"Format collection", k:"ok"},
-   {m:"Premium Nemu Nemu 抱きまくら M (couché)", s:"~56 × 24 × 14 cm — le « raplapla » classique", jp:"¥1 900-2 750", eur:"≈ 11-15 €", fr:"FR : import ~40 €", v:"Format collection", k:"ok"},
-   {m:"Premium Nemu Nemu 抱きまくら L (couché)", s:"~70 × 32 × 20 cm — encombrant dans la valise", jp:"¥2 500-3 900", eur:"≈ 14-22 €", fr:"FR : import ~60 €", v:"Si place", k:"mid"},
-   {m:"Mascottes / porte-clés + autres lignes molles (くたっとびより, マシュマロアニマル, ねこ肯定感)", s:"10-20 cm, pour compléter sans prendre de place", jp:"¥600-1 800", eur:"≈ 3-10 €", fr:"—", v:"Bonus", k:"mid"} ],
+   {m:"マシュマロアニマル ボルスター (animaux)", s:"15 × 27 × 14 cm · à Umeda le 12/10 : ゆず, ラブ, コタロウ, ラッキー, コテツ, くるり", jp:"¥1 360-1 780", eur:"≈ 7-10 €", fr:"—", v:"Le bon format", k:"ok"},
+   {m:"マシュマロアクアミエ ボルスター (animaux marins)", s:"15-19 × 27-29 cm · à Umeda : phoque, requin, axolotl, loutre, dauphin, méduse, poisson-clown", jp:"¥1 480-1 780", eur:"≈ 8-10 €", fr:"—", v:"Le bon format", k:"ok"},
+   {m:"かむかむズ ボルスター", s:"même format, gueule ouverte · à Umeda : シンベエさん, ザップ", jp:"¥1 520-1 850", eur:"≈ 8-10 €", fr:"—", v:"Bonus", k:"mid"},
+   {m:"Bolster Nemu Nemu d'origine (こんた, ぽんきち)", s:"Sortis en 2020, plus en stock nulle part", jp:"¥1 550-1 720", eur:"—", fr:"—", v:"Mercari seulement", k:"no"} ],
   check:[
-   {id:"raplapla-stock", t:"Avant d'y aller : ouvrir une fiche Nemu Nemu sur yodobashi.com → « 在庫のある店舗 » (Kyoto / Ueno)"},
-   {id:"raplapla-rayon", t:"Rayon coussins (抱き枕) plutôt que jouets — demander « りぶはあと の ねむねむアニマルズ »"},
-   {id:"raplapla-place", t:"Tailles S/M de préférence (valises) · détaxe si ≥ ¥5 000 dans le magasin le même jour"} ],
-  risk:"Stock par magasin très variable (personnages). Étude : recherches/peluches-raplapla.md"
+   {id:"raplapla-stock", t:"La veille : revérifier le stock d'Umeda sur yodobashi.com (fiche du modèle → « 在庫のある店舗 »)"},
+   {id:"raplapla-rayon", t:"Demander « りぶはあと の ボルスター » (ribu-hāto no borusutā) + montrer une photo de la collection"},
+   {id:"raplapla-place", t:"27 cm : ça tient dans la valise · détaxe si ≥ ¥5 000 le même jour dans le même magasin (3 peluches)"},
+   {id:"raplapla-umeda", t:"Option : aller-retour Osaka (JR Kyoto → Osaka ~30 min) pour voir les 15 modèles en vrai"} ],
+  risk:"Fin de série probable chez les gros revendeurs. Si Umeda est vide : commande yodobashi.com livrée à l'Airbnb, ou Mercari via le cousin. Étude : recherches/peluches-raplapla.md"
  },
  liseuse:{
   dec:"✅ Kobo Libra Colour — ~195 € tax-free",
