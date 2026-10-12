@@ -65,7 +65,10 @@ const DAYS = [
   prat:[{t:"✈️ "+PNR_A, copy:PNR_A},{t:"🚆 Haruka 47763", copy:"47763"},{t:"📱 Data → Ubigi", copy:"Settings → Mobile Service → Mobile Data → Ubigi"}],
   plan:[{w:"08:40",x:"CA927 Pékin → Osaka KIX (arrivée 12:40)"},
         {w:"12:40",x:"📱 À l'atterrissage : Settings → Mobile Service → Mobile Data → Ubigi (puis Safari pour tester ; si rien : mode avion 10 s)"},
-        {w:"aprèm",x:"Immigration + douane (kiosques intégrés) → gare JR de l'aéroport : retirer les billets Haruka à la borne verte (passeports + Visa Premier + n° de résa + code 4 chiffres) → Haruka non réservé, 1 toutes les 30 min, ~80 min", maps:"Kansai-Airport Station"},
+        {w:"~13:45",x:"Immigration + douane (kiosques intégrés, QR Visit Japan Web)"},
+        {w:"étape 1",x:"💴 ATM Seven Bank (hall d'arrivée T1, 7-Eleven) : retirer ¥40 000 par carte Revolut (Antoine puis Emilie) — il faut du CASH pour les ICOCA"},
+        {w:"étape 2",x:"🎫 Guichet JR (Ticket Office, gare Kansai-Airport, 2F passerelle) : (a) retrait Haruka — les 4 passeports + Visa Premier + code 4 chiffres ; (b) 2 × « kodomo ICOCA » (こども ICOCA) — passeports des filles, ¥2 000 chacune EN ESPÈCES (¥500 de caution + ¥1 500 de crédit, assez pour Kyoto ; recharge plus tard à Tokyo). Si le guichet est bondé : Haruka à la borne verte à côté, ICOCA le 20 à Kyoto", maps:"Kansai-Airport Station"},
+        {w:"étape 3",x:"🚆 Haruka non réservé (cars 自由席 en queue), 1 toutes les ~30 min, ~80 min → Kyoto. Suica Wallet des adultes : ¥3 000 chargés par Apple Pay avant de partir, inutile au guichet"},
         {w:"~16h",x:"Gare de Kyoto → Airbnb en taxi (sortie Karasuma, file taxis ; 10-15 min, ~¥1 500-2 000, 4 pers. + valises OK)", maps:"246 Yakushicho Higashiyama Kyoto"},
         {w:"soir",x:"Check-in, repas simple dans Gion, coucher tôt (décalage)"}],
   alerts:["📱 Antoine : basculer les données sur Ubigi dès l'atterrissage (B&You reste en itinérance coupée)",
@@ -395,7 +398,7 @@ const DETAXE_NOTE = "⚠️ Détaxe : −10 % immédiat en caisse <b>jusqu'au 31
 // Rappels « Avant le départ » (carte affichée tant qu'on est avant DAYS[0].d) — une chaîne = une ligne.
 const PREDEP = [
   "✈️ Check-in Air China AU COMPTOIR de Genève (en ligne impossible) : arriver 10h, demander valises étiquetées jusqu'à KIX + les 2 cartes d'embarquement (GVA→PEK, PEK→KIX)",
-  "📲 Suica : transférer les 2 anciennes cartes physiques dans Apple Wallet (Wallet → + → Suica → Transférer une carte existante, carte au dos de l'iPhone) — récupère solde + caution",
+  "📲 Suica : transférer les 2 anciennes cartes physiques dans Apple Wallet (Wallet → + → Suica → Transférer une carte existante, carte au dos de l'iPhone) — récupère solde + caution · puis charger à ~¥3 000 chacune par Apple Pay (Revolut)",
   "📱 À Osaka : Settings → Mobile Service → Mobile Data → Ubigi (eSIM installée, itinérance B&You coupée)",
   "🎢 Créer le compte Tokyo Disney Resort (billets datés achetés la veille, le 2 ou le 4/11)",
   "Messages aux hôtes à envoyer (heures d'arrivée)",
