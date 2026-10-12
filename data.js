@@ -401,7 +401,7 @@ const PREDEP = [
   "Messages aux hôtes à envoyer (heures d'arrivée)",
   "⬇️ Google Maps hors-ligne (Kiso, Shirahone, Hakone, Izu) + Translate japonais",
   "✅ 🚆 Haruka KIX→Kyoto 14/10 acheté (résa 47763, ¥6 600, non réservé, Visa Premier) — le code à 4 chiffres : le connaître par cœur, Visa Premier + 4 passeports à portée de main à l'arrivée",
-  "🧒 ICOCA enfant ×2 au guichet JR (KIX ou gare de Kyoto, passeports des filles, ¥2 000 dont ¥500 de dépôt) — sur place",
+  "🧒 « こども ICOCA » enfant ×2 au guichet JR de la gare KIX (même guichet que le retrait Haruka ; passeports des filles, ¥2 000 chacune dont ¥500 de dépôt) — repli : billets enfant aux bornes Keihan/Hankyu les 18-19, puis guichet gare de Kyoto le 20/10 avant le Shinkansen",
   "🚲 Vélos Kyoto : décision + résa après réponse RESI STAY (recherches/velos-kyoto.md)",
   "✅ 🏃 Itinéraires course : tous tracés dans Strava (Kyoto, Ena, Kawaguchiko, Hakone, Izu, Tokyo) → chips 🏃 sur chaque fiche jour",
 ];
