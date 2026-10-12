@@ -389,6 +389,8 @@ const PREDEP = [
   "🎢 Créer le compte Tokyo Disney Resort (billets datés achetés la veille, le 2 ou le 4/11)",
   "Messages aux hôtes à envoyer (heures d'arrivée)",
   "⬇️ Google Maps hors-ligne (Kiso, Shirahone, Hakone, Izu) + Translate japonais",
+  "🎵 Apple Music : télécharger playlists et albums hors ligne (voiture, avion)",
+  "🎧 Apple Podcasts : télécharger les épisodes hors ligne (avion, courses à pied)",
   "🚲 Vélos Kyoto : décision + résa après réponse RESI STAY (recherches/velos-kyoto.md)",
   "✅ 🏃 Itinéraires course : tous tracés dans Strava (Kyoto, Ena, Kawaguchiko, Hakone, Izu, Tokyo) → chips 🏃 sur chaque fiche jour",
 ];
