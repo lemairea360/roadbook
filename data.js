@@ -259,16 +259,77 @@ const ACHATS = [
   {id:"vet-robes", t:"Robes été / hiver", who:"les filles", where:"Uniqlo Kids · GU · Muji Kids · Nishimatsuya"},
   {id:"vet-collants", t:"Collants", who:"les filles", where:"Uniqlo HeatTech kids · Muji · Nishimatsuya"},
   {id:"coque-iphone", t:"Coque iPhone 14 Pro", who:"Antoine", where:"Loft · Tokyu Hands · Yodobashi/Bic (Elecom)", note:"modèle de 3 ans : rayons limités, viser Loft ou Amazon JP"},
-  {id:"cartouche-chalana", t:"🖋️ Cartouches Sailor Chalana (maman)", who:"Antoine", where:"Rayon Sailor des grands papetiers : Itoya Ginza, Maruzen Marunouchi, Kingdom Note Shinjuku (occasion), Maruzen Kyoto — ou Mercari via le cousin (¥1 200 la boîte de 5)", note:"Demander « シャレーナ用 スリムカートリッジ 13-0150 » avec la photo de la boîte bleue. Produit hors catalogue, stock aléatoire. Plan B : seringue + encre Sailor en bouteille pour recharger la cartouche existante. Détail : recherches/stylo-chalana.md"},
-  {id:"appareil-photo-flora", t:"📷 Appareil photo Flora : myFirst Camera 3 (option Camera 50)", who:"Antoine & Emilie", where:"PLAN A · Yodobashi Kyoto, 2 min de la sortie Karasuma de la gare (9h30-22h) : Camera 3 EN STOCK le 12/10 (exposé, stock faible) — 20 min chrono le 14 à l'arrivée si courage, caisse détaxe avec passeport. PLAN B · Edion Kyoto Kawaramachi (Shijō-Kawaramachi, 12 min à pied de l'Airbnb, 10h30-21h, détaxe, jouets au sous-sol « Neverland ») — stock non confirmé, ou Loft Kyoto. PLAN C · Yodobashi Ueno (5 min de l'Airbnb Tokyo) en stock le 12/10, ou Amazon.co.jp retrait en konbini (~¥9 900, sans détaxe)", note:"Couleurs = pochette animal : ROSE (chaton, FC2003SA-PK01, ¥9 480) EN STOCK à Yodobashi Kyoto et Ueno le 12/10 · BLEU (dragon, ¥9 080) en stock Kyoto · JAUNE (girafe, ¥9 980) = sur commande seulement à Kyoto/Ueno (en stock à Umeda ; Amazon.co.jp en repli). Demander « マイファースト カメラ 3 » (Oaxis, FC2003SA, détaxe −10 %) : 16 MP, écran 2\", selfie, flash, cadres + filtres, SANS jeux, microSD ≤ 32 Go — vérifier les langues sur la boîte (anglais sûr). Option à tester en main : myFirst Camera 50 (FC4001SA, violet ¥15 000 EXPOSÉ + bleu ¥15 800, en stock à Kyoto et Ueno le 12/10) = écran tactile 4\", 20 MP + macro, montage vidéo. Détaxe = seulement en payant en magasin (une commande au comptoir payée au retrait devrait passer ; une commande web non). Détail : recherches/appareil-photo-flora.md"},
-  {id:"peluches-raplapla", t:"🧸 Peluches « raplapla » = Liv Heart « Nemu Nemu Animals »", who:"Les filles", where:"Yodobashi Kyoto (gare) ou Yodobashi Ueno (5 min de l'Airbnb) — vérifier le stock par magasin sur yodobashi.com (« 在庫のある店舗 ») · Loft : Kyoto Loft (Mina Kyoto, Kawaramachi-Sanjō, 11h-21h), Shibuya Loft (le 31/10), Ginza Loft · Hands, Bic Camera", note:"Demander « りぶはあと の ねむねむアニマルズ » + photo de la collection. Souvent au rayon coussins (抱き枕), pas jouets. Tailles : S assis ¥1 800-1 900 · M couché ¥1 900-2 750 · L ¥2 500-3 900. Boutique officielle en ligne vide (refonte). Détail : recherches/peluches-raplapla.md"},
-  {id:"airtags", t:"🏷️ AirTags ×4", who:"Antoine", where:"Apple Store Kyoto (Shijō, détaxe passeport) ou Bic Camera gare de Kyoto / Yodobashi — pack de 4 AirTag 2 : ¥18 400 TTC, ¥16 727 en détaxe (~95 €) = prix revendeurs FR (90-95 €), Apple FR 119 €", note:"Pour les filles sur place (poche zippée ou bracelet). Marchent pareil en France : aucun verrouillage régional. Après activation : Localiser → l'AirTag → Partager avec Emilie, sinon son iPhone recevra des alertes « AirTag détecté » quand elle est seule avec une fille"},
-  {id:"cloche-ours", t:"🔔 Clochette à ours", who:"Antoine", where:"Daiso (~¥110-220, rayon outdoor) ou Montbell Kyoto Shinkyōgoku 11h-20h (~¥1 500-2 500, avec silencieux)", note:"Dès les premiers jours à Kyoto — sert au Kasagi (20-21/10), à Shirahone (22/10) et au Kurodake (23/10)"},
+  {id:"cartouche-chalana", t:"🖋️ Cartouches Sailor Chalana", who:"pour maman"},   // fiche détaillée → FICHES['cartouche-chalana']
+  {id:"appareil-photo-flora", t:"📷 Appareil photo", who:"pour Flora"},   // fiche détaillée → FICHES['appareil-photo-flora']
+  {id:"peluches-raplapla", t:"🧸 Peluches « raplapla » (Liv Heart Nemu Nemu)", who:"pour les filles"},   // fiche détaillée → FICHES['peluches-raplapla']
+  {id:"airtags", t:"🏷️ AirTags ×4 (pour les filles sur place)", who:"Antoine", where:"Apple Store Kyoto (Shijō, détaxe) · Bic Camera gare de Kyoto · Yodobashi", note:"Pack de 4 : ¥18 400 TTC, ~¥16 700 détaxé (~95 €, = revendeurs FR). Dès l'activation : Localiser → AirTag → Partager avec Emilie (sinon alertes « AirTag détecté »)"},
+  {id:"cloche-ours", t:"🔔 Clochette à ours", who:"Antoine", where:"Daiso (~¥110-220, rayon outdoor) · Montbell Kyoto Shinkyōgoku (~¥1 500-2 500, avec silencieux)", note:"À prendre dès Kyoto — sert au Kasagi (20-21/10), à Shirahone (22/10) et au Kurodake (23/10)"},
   {id:"casque-sony", t:"Casque Sony WH-1000XM6", who:"Antoine", where:"Bic Camera / Yodobashi / Sony Store Ginza", note:"~¥59k TTC → ~¥54k HT ≈ 300 € vs ~450 € FR (−30 %) · modèle mondial, appli en français · l'alternative aux AirPods Max · avant le 31/10"},
 ];
 // Fiches d'achat — source : recherches/achats/liseuse.md & montre.md (relevés du 9 oct. 2026, 1 € ≈ 185 ¥).
 // jp = prix JP tax-free (affiché en gros), jpn = remplaçant quand pas de prix JP, fr = prix France.
 const FICHES = {
+ "appareil-photo-flora":{
+  dec:"✅ myFirst Camera 3 (~¥9 100-10 000 TTC, ~47-52 € détaxé) · option Camera 50 à tester en main · instax Pal 2 écarté",
+  arb:[
+   "Critères : qualité correcte, effets rigolos, PAS de jeux, menus en anglais (français = bonus), microSD (on a la carte), ~50-100 €.",
+   "Le Camera 3 coche tout sauf la musique : 16 MP réels avec autofocus, double objectif selfie, flash LED, macro, cadres + filtres. Au Japon comme en France, « sans jeux » et « lecteur MP3 » ne vont pas ensemble.",
+   "Camera 50 (~¥15 000) = écran tactile 4″ pour regarder les photos à deux, montage vidéo, mais 151 g et base Android (autonomie moyenne) : à prendre en main avant.",
+   "instax Pal 2 (¥25 300) écarté : on cadre au viseur et on revoit ses photos sur un écran de 3 cm ou sur le téléphone des parents — l'usage ne colle pas à 6 ans.",
+   "Couleur = pochette antichoc animal : rose = chaton, bleu = dragon, jaune = girafe. Le 14 à Kyoto : rose et bleu en stock, girafe sur commande seulement." ],
+  ou:"PLAN A · Yodobashi Kyoto, 2 min de la sortie Karasuma (9h30-22h), rayon 子供用カメラ : rose, bleu et Camera 50 EN STOCK le 12/10 — 20 min le 14 à l'arrivée, caisse détaxe avec passeport · PLAN B · Edion Kyoto Kawaramachi (12 min de l'Airbnb, détaxe, jouets au sous-sol) stock non confirmé · PLAN C · Yodobashi Ueno (5 min de l'Airbnb Tokyo, en stock) ou Amazon.co.jp retrait konbini (sans détaxe)",
+  cands:[
+   {m:"myFirst Camera 3 (Oaxis, FC2003SA)", s:"16 MP natifs, autofocus + visages · écran 2″ IPS · objectif selfie + macro · flash LED · vidéo 1080p · cadres, filtres, timelapse, rafale · SANS jeux · microSD ≤ 32 Go (4 Go fournie) · 80 g · pochette animal", jp:"¥9 080 (bleu) · ¥9 480 (rose) · ¥9 980 (jaune)", eur:"≈ 47-52 € détaxé", fr:"FR : ~80-105 € (Galaxus, Euronics)", v:"Choix n° 1", k:"ok"},
+   {m:"myFirst Camera 50 (FC4001SA)", s:"20 MP + macro 20 mm, selfie 16 MP · écran tactile 4″ · 16 Go + microSD ≤ 128 Go · montage vidéo (stickers, dessin, musique) · base Android, 151 g, 2 000 mAh · bruit en basse lumière, zoom ×3 médiocre", jp:"¥15 000 (violet, exposé) · ¥15 800 (bleu)", eur:"≈ 77-82 € détaxé", fr:"FR : ~120-130 €", v:"À tester", k:"mid"},
+   {m:"myFirst Camera 10", s:"5 MP seulement · écran 2″ · 5 cadres + effets · 76 g · le budget", jp:"¥5 470-5 980", eur:"≈ 28-31 € détaxé", fr:"FR : ~50 €", v:"Repli budget", k:"mid"},
+   {m:"instax Pal 2 (Fujifilm, sorti le 9/10)", s:"10 MP · 30 effets au dial · viseur optique, écran 1,3″ de relecture · animation 10 images · microSD · pas de vidéo, pas de zoom · effets/partage via l'app", jp:"¥25 300", eur:"≈ 130 € détaxé", fr:"FR : pas encore sorti", v:"Écarté", k:"no"},
+   {m:"MiNiPiC (marque japonaise sans jeux)", s:"Menus en japonais uniquement (hiragana)", jp:"¥7 750", eur:"≈ 40 €", fr:"—", v:"Écarté (langue)", k:"no"} ],
+  check:[
+   {id:"photo-buy-cam3", t:"🛒 myFirst Camera 3 — demander « マイファースト カメラ 3 » (rose = chaton / bleu = dragon ; girafe = jaune, sur commande)"},
+   {id:"photo-test-cam50", t:"Prendre en main le Camera 50 (écran 4″) avant de trancher — +¥6 000"},
+   {id:"photo-langues", t:"Vérifier sur la boîte la liste des langues (anglais sûr, français ?) et que notre microSD fait ≤ 32 Go"},
+   {id:"photo-taxfree", t:"Caisse détaxe (免税) avec le passeport, avant le 31/10 ; garder la facture"},
+   {id:"photo-zelie", t:"Option : un 2e Camera 3 pour Zélie (plus net : autofocus, macro, flash — mais perd jeux + MP3 de son ARNSSIEN)"} ],
+  risk:"Garantie myFirst au Japon uniquement (risque faible, objet à 50 €). Détaxe = achat payé en magasin ; une commande au comptoir payée au retrait devrait passer, une commande web non. Étude : recherches/appareil-photo-flora.md"
+ },
+ "cartouche-chalana":{
+  dec:"🔸 Quête : cartouche fine Sailor « Chalana » réf. 13-0150 — hors catalogue, à chasser en vieux stock ou sur Mercari via le cousin",
+  arb:[
+   "Le stylo = Sailor Chalana (1979, « le plus fin du monde »), hors catalogue. Il ne prend QUE la cartouche fine Sailor 13-0150 (boîte de 5, ¥165) : cartouches standard, convertisseur et tubes vides Sailor sont tous marqués « non compatible Chalana ».",
+   "Plus en boutique officielle Sailor, épuisée chez Pen-House dans les 3 couleurs → reste le vieux stock des grands papetiers et l'occasion (Mercari : 1 boîte à ¥1 200 le 12/10, 4 vendues récemment ¥900-2 000).",
+   "Plan B sérieux : recharger la cartouche existante à la seringue (aiguille mousse ~¥300, Hands/Loft) avec une bouteille d'encre Sailor — réutilisable des dizaines de fois.",
+   "À demander à maman : la couleur (l'annonce Mercari = bleu) et si elle écrit beaucoup (→ bouteille + seringue)." ],
+  ou:"Rayon Sailor : Itoya Ginza (3F) · Maruzen Marunouchi · Kingdom Note Shinjuku (occasion/vintage, le plus probable) · Eurobox Ginza · Maruzen Kyoto (BAL) · TAG Stationery Kyoto — montrer la photo de la boîte bleue et dire « シャレーナ用 スリムカートリッジ 13-0150 » · Mercari : demander au cousin d'acheter et d'apporter le 3/11",
+  cands:[
+   {m:"Sailor スリム万年筆用カートリッジインク 13-0150 (boîte de 5)", s:"La seule compatible (Chalana / Gracile / DAKS Slim). Noir, bleu, bleu-noir. Produit en fin de vie", jp:"¥165 neuf · ¥1 200-2 000 sur Mercari", eur:"≈ 1-11 €", fr:"FR : introuvable", v:"Cible", k:"ok"},
+   {m:"Mercari — annonce du 12/10", s:"Boîte de 5, bleu, neuve non utilisée, vendeur vérifié (Saitama) — jp.mercari.com/item/m34570569274 — compte + téléphone japonais requis → cousin", jp:"¥1 200 + port", eur:"≈ 7 €", fr:"—", v:"Via le cousin", k:"mid"},
+   {m:"Seringue + encre Sailor en bouteille", s:"Recharge de la cartouche actuelle (vérifier qu'elle ne fuit pas) — Hands, Loft, papeteries", jp:"~¥300 + ¥1 100 (encre 50 ml)", eur:"≈ 8 €", fr:"FR : idem", v:"Plan B", k:"mid"},
+   {m:"Convertisseur slim Sailor 14-0502-000", s:"Vu sur Mercari (vendu ¥1 600) — permettrait l'encre en bouteille ; à confirmer que ça rentre dans un Chalana", jp:"~¥1 600 occasion", eur:"≈ 9 €", fr:"—", v:"Piste", k:"mid"} ],
+  check:[
+   {id:"chalana-cousin", t:"Demander au cousin s'il peut acheter la boîte Mercari (¥1 200) et l'apporter le 3/11"},
+   {id:"chalana-couleur", t:"Demander à maman la couleur souhaitée + si elle écrit beaucoup"},
+   {id:"chalana-papetiers", t:"En passant : Kingdom Note (Shinjuku), Itoya Ginza, Maruzen — photo de la boîte + « 13-0150 »"},
+   {id:"chalana-seringue", t:"Acheter une seringue à encre (aiguille mousse) + une bouteille Sailor = plan B garanti"} ],
+  risk:"Produit abandonné : aucune garantie d'en trouver ; l'encre d'une boîte ancienne peut avoir séché (le vendeur Mercari ne garantit pas). Étude : recherches/stylo-chalana.md"
+ },
+ "peluches-raplapla":{
+  dec:"✅ Liv Heart « Nemu Nemu Animals » (ねむねむアニマルズ) — Yodobashi Kyoto / Ueno (stock par magasin sur yodobashi.com) ou Loft",
+  arb:[
+   "C'est bien ça : marque りぶはあと / LIV HEART (Osaka), gamme ねむねむアニマルズ. Les « raplapla » = les 抱きまくら (coussins à câliner) Premium Nemu Nemu, 3 tailles + mascottes.",
+   "Souvent au rayon coussins / literie (抱き枕), pas au rayon jouets. Demander « りぶはあと の ねむねむアニマルズ » + montrer une photo de la collection.",
+   "Boutique officielle en ligne en refonte (catalogue vide le 12/10) : inutilisable. Mercari pour les modèles retirés (via le cousin)." ],
+  ou:"Yodobashi Kyoto (gare) ou Yodobashi Ueno (5 min de l'Airbnb) — 729 réf. Liv Heart, stock affiché par magasin sur chaque fiche yodobashi.com (« 在庫のある店舗 ») · Kyoto Loft (Mina Kyoto, Kawaramachi-Sanjō, 11h-21h, 20 min à pied) · Shibuya Loft (le 31/10) · Ginza Loft · Hands · Bic Camera",
+  cands:[
+   {m:"Premium Nemu Nemu お座り S (assis, poche au dos)", s:"13 × 13 × 18 cm", jp:"¥1 780-1 900", eur:"≈ 10 €", fr:"FR : import ~25-35 €", v:"Format collection", k:"ok"},
+   {m:"Premium Nemu Nemu 抱きまくら M (couché)", s:"~56 × 24 × 14 cm — le « raplapla » classique", jp:"¥1 900-2 750", eur:"≈ 11-15 €", fr:"FR : import ~40 €", v:"Format collection", k:"ok"},
+   {m:"Premium Nemu Nemu 抱きまくら L (couché)", s:"~70 × 32 × 20 cm — encombrant dans la valise", jp:"¥2 500-3 900", eur:"≈ 14-22 €", fr:"FR : import ~60 €", v:"Si place", k:"mid"},
+   {m:"Mascottes / porte-clés + autres lignes molles (くたっとびより, マシュマロアニマル, ねこ肯定感)", s:"10-20 cm, pour compléter sans prendre de place", jp:"¥600-1 800", eur:"≈ 3-10 €", fr:"—", v:"Bonus", k:"mid"} ],
+  check:[
+   {id:"raplapla-stock", t:"Avant d'y aller : ouvrir une fiche Nemu Nemu sur yodobashi.com → « 在庫のある店舗 » (Kyoto / Ueno)"},
+   {id:"raplapla-rayon", t:"Rayon coussins (抱き枕) plutôt que jouets — demander « りぶはあと の ねむねむアニマルズ »"},
+   {id:"raplapla-place", t:"Tailles S/M de préférence (valises) · détaxe si ≥ ¥5 000 dans le magasin le même jour"} ],
+  risk:"Stock par magasin très variable (personnages). Étude : recherches/peluches-raplapla.md"
+ },
  liseuse:{
   dec:"✅ Kobo Libra Colour — ~195 € tax-free",
   ou:"Bic Camera / Yodobashi, rayon liseuses (電子書籍リーダー) — réf. : 39 960 ¥ TTC sur Bic Camera.com (9 oct.)",
