@@ -394,14 +394,18 @@ const TAUX_DEFAUT = 185;
 const DETAXE_NOTE = "⚠️ Détaxe : −10 % immédiat en caisse <b>jusqu'au 31/10 inclus</b> (passeport, min ¥5 000 HT/magasin/jour).<br>Dès le 1/11 : on paie plein tarif, remboursement aux bornes douane de Haneda avant le check-in (garder les tickets, arriver en avance le 5/11).<br>→ Fenêtre en or : <b>28→31 octobre</b> (Akihabara/Yodobashi dès l'arrivée à Tokyo).";
 // Rappels « Avant le départ » (carte affichée tant qu'on est avant DAYS[0].d) — une chaîne = une ligne.
 const PREDEP = [
-  "Check-in Air China en ligne — ~lun 12/10",
+  "✈️ Check-in Air China AU COMPTOIR de Genève (en ligne impossible) : arriver 10h, demander valises étiquetées jusqu'à KIX + les 2 cartes d'embarquement (GVA→PEK, PEK→KIX)",
+  "💳 Visa Premier : vérifier dans l'app Caisse d'Épargne que les paiements et retraits À L'ÉTRANGER sont activés (plafonds/géoblocage) — elle sert pour le retrait Haruka et en secours",
+  "📲 Suica : transférer les 2 anciennes cartes physiques dans Apple Wallet (Wallet → + → Suica → Transférer une carte existante, carte au dos de l'iPhone) — récupère solde + caution",
+  "🏃 Strava : télécharger les cartes hors ligne des routes (ouvrir chaque route → ⋯ → télécharger) pour Kasagi, Kurodake, Ashi, Izu — pas de réseau sur les crêtes",
+  "🔋 Batteries externes chargées, dans le bagage CABINE (interdites en soute) + câbles USB pour la voiture",
   "💳 Cartes Revolut (Premium ×2) : swipe ON, PIN connu, ajoutées à Apple Pay · rien à convertir",
   "📱 À Osaka : Settings → Mobile Service → Mobile Data → Ubigi (eSIM installée, itinérance B&You coupée)",
   "🎢 Créer le compte Tokyo Disney Resort (billets datés achetés la veille, le 2 ou le 4/11)",
   "Messages aux hôtes à envoyer (heures d'arrivée)",
   "⬇️ Google Maps hors-ligne (Kiso, Shirahone, Hakone, Izu) + Translate japonais",
   "✅ 🚆 Haruka KIX→Kyoto 14/10 acheté (résa 47763, ¥6 600, non réservé, Visa Premier) — le code à 4 chiffres : le connaître par cœur, Visa Premier + 4 passeports à portée de main à l'arrivée",
-  "📲 Suica dans Apple Wallet (Antoine + Emilie, recharge Apple Pay) · ICOCA enfant ×2 au guichet JR (KIX ou gare de Kyoto, passeports des filles, ¥2 000 dont ¥500 de dépôt)",
+  "🧒 ICOCA enfant ×2 au guichet JR (KIX ou gare de Kyoto, passeports des filles, ¥2 000 dont ¥500 de dépôt) — sur place",
   "🎵 Apple Music : télécharger playlists et albums hors ligne (voiture, avion)",
   "🎧 Apple Podcasts : télécharger les épisodes hors ligne (avion, courses à pied)",
   "🚲 Vélos Kyoto : décision + résa après réponse RESI STAY (recherches/velos-kyoto.md)",
