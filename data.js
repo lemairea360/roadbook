@@ -67,8 +67,8 @@ const DAYS = [
         {w:"12:40",x:"📱 À l'atterrissage : Settings → Mobile Service → Mobile Data → Ubigi (puis Safari pour tester ; si rien : mode avion 10 s)"},
         {w:"~13:45",x:"Immigration + douane (kiosques intégrés, QR Visit Japan Web)"},
         {w:"étape 1",x:"💴 ATM Seven Bank (hall d'arrivée T1, 7-Eleven) : retirer ¥40 000 par carte Revolut (Antoine puis Emilie) — il faut du CASH pour les ICOCA"},
-        {w:"étape 2",x:"🎫 Guichet JR (Ticket Office, gare Kansai-Airport, 2F passerelle) : (a) retrait Haruka — les 4 passeports + Visa Premier + code 4 chiffres ; (b) 2 × « kodomo ICOCA » (こども ICOCA) — passeports des filles, ¥2 000 chacune EN ESPÈCES (¥500 de caution + ¥1 500 de crédit, assez pour Kyoto ; recharge plus tard à Tokyo). Si le guichet est bondé : Haruka à la borne verte à côté, ICOCA le 20 à Kyoto", maps:"Kansai-Airport Station"},
-        {w:"étape 3",x:"🚆 Haruka non réservé (cars 自由席 en queue), 1 toutes les ~30 min, ~80 min → Kyoto. Suica Wallet des adultes : ¥3 000 chargés par Apple Pay avant de partir, inutile au guichet"},
+        {w:"étape 2",x:"🎫 Guichet JR (Ticket Office, gare Kansai-Airport, 2F passerelle) : (a) retrait Haruka — les 4 passeports + Visa Premier + code 4 chiffres ; (b) 2 × « kodomo ICOCA » (こども ICOCA) — passeports des filles, ¥2 000 chacune EN ESPÈCES (¥500 de caution + ¥1 500 de crédit, assez pour Kyoto ; recharge plus tard à Tokyo) ; (c) 🪪 ADULTES (transfert Wallet raté le 12/10) : sortir les 2 anciennes Suica physiques, lire le solde et charger ¥3 000 chacune EN ESPÈCES à la borne de recharge (チャージ) à côté du guichet — si une carte est refusée (expirée après 10 ans sans usage) : 2 ICOCA adulte au guichet, ¥2 000 chacune en espèces. Le guichet JR West ne fait ni transfert Wallet ni remboursement Suica. Si le guichet est bondé : Haruka à la borne verte à côté, ICOCA le 20 à Kyoto", maps:"Kansai-Airport Station"},
+        {w:"étape 3",x:"🚆 Haruka non réservé (cars 自由席 en queue), 1 toutes les ~30 min, ~80 min → Kyoto. Adultes : anciennes Suica physiques rechargées en espèces à l'étape 2"},
         {w:"option",x:"📷 Si courage à l'arrivée à Kyoto : Yodobashi (2 min, sortie Karasuma, jusqu'à 22h) → myFirst Camera 3 pour Flora, en stock, caisse détaxe (passeport). 20 min. Sinon plan B Edion Kawaramachi pendant la semaine", maps:"Yodobashi Camera Multimedia Kyoto"},
         {w:"~16h",x:"Gare de Kyoto → Airbnb en taxi (sortie Karasuma, file taxis ; 10-15 min, 4 pers. + valises OK). Prix attendu au compteur : ¥1 300-1 700 (3 km : ¥500 les 900 m puis ¥100/255 m, un peu plus si bouchons) — au-delà de ¥2 500 c'est anormal. Toujours au compteur, jamais de prix négocié ; carte IC/CB acceptées. Montrer l'adresse en japonais : 京都市東山区薬師町246", maps:"246 Yakushicho Higashiyama Kyoto"},
         {w:"soir",x:"Check-in, repas simple dans Gion, coucher tôt (décalage)"}],
@@ -88,7 +88,7 @@ const DAYS = [
   plan:[{w:"matin",x:"Fushimi Inari à vélo (~30 min par la rivière), torii rouges jusqu'au belvédère Yotsutsuji", maps:"Fushimi Inari Taisha"},
         {w:"aprèm",x:"Retour tranquille, repos ou Nishiki Market"}]},
  {d:"2026-10-18", t:"Nara en train 🦌", ph:"Kyoto", sleep:"kyoto", menu:true, prat:[...RUN_KYOTO],
-  alerts:["Dimanche chargé → partir tôt (~1h de porte à porte)","Cartes IC : Suica Wallet (adultes) + ICOCA enfant (filles) — pas de billet à acheter"],
+  alerts:["Dimanche chargé → partir tôt (~1h de porte à porte)","Cartes IC : anciennes Suica physiques (adultes) + ICOCA enfant (filles) — pas de billet à acheter"],
   plan:[{w:"08:30",x:"Keihan Kiyomizu-Gojo (5 min à pied) → Tambabashi (12 min) → Kintetsu « Express » (急行, sans supplément) → Kintetsu-Nara (~40 min), parc à 5 min", maps:"Kiyomizu-Gojo Station"},
         {w:"matin",x:"Daims + crackers, Tōdai-ji (Grand Bouddha)", maps:"Nara Park"},
         {w:"aprèm",x:"Mochi pilés en spectacle chez Nakatanidou, retour Kyoto", maps:"Nakatanidou Nara"}]},
@@ -467,7 +467,7 @@ const DETAXE_NOTE = "⚠️ Détaxe : −10 % immédiat en caisse <b>jusqu'au 31
 // Rappels « Avant le départ » (carte affichée tant qu'on est avant DAYS[0].d) — une chaîne = une ligne.
 const PREDEP = [
   "✈️ Check-in Air China AU COMPTOIR de Genève (en ligne impossible) : arriver 10h, demander valises étiquetées jusqu'à KIX + les 2 cartes d'embarquement (GVA→PEK, PEK→KIX)",
-  "📲 Suica : transférer les 2 anciennes cartes physiques dans Apple Wallet (Wallet → + → Suica → Transférer une carte existante, carte au dos de l'iPhone) — récupère solde + caution · puis charger à ~¥3 000 chacune par Apple Pay (Revolut)",
+  "🪪 Suica adultes : transfert Wallet raté (12/10) → emporter les 2 anciennes Suica physiques dans le portefeuille ; recharge en espèces à KIX (étape 2 de la fiche du 14/10)",
   "📱 À Osaka : Settings → Mobile Service → Mobile Data → Ubigi (eSIM installée, itinérance B&You coupée)",
   "🎢 Créer le compte Tokyo Disney Resort (billets datés achetés la veille, le 2 ou le 4/11)",
   "Messages aux hôtes à envoyer (heures d'arrivée)",
