@@ -388,8 +388,6 @@ const PREDEP = [
   "📱 À Osaka : Settings → Mobile Service → Mobile Data → Ubigi (eSIM installée, itinérance B&You coupée)",
   "🎢 Créer le compte Tokyo Disney Resort (billets datés achetés la veille, le 2 ou le 4/11)",
   "Messages aux hôtes à envoyer (heures d'arrivée)",
-  "Installer le roadbook sur les 2 iPhones + test mode avion",
-  "🎟️ Billets Harry Potter : ajouter les 4 pass Apple Wallet sur les 2 iPhones + PDF dans Fichiers (iCloud) en secours",
   "⬇️ Google Maps hors-ligne (Kiso, Shirahone, Hakone, Izu) + Translate japonais",
   "🚲 Vélos Kyoto : décision + résa après réponse RESI STAY (recherches/velos-kyoto.md)",
   "✅ 🏃 Itinéraires course : tous tracés dans Strava (Kyoto, Ena, Kawaguchiko, Hakone, Izu, Tokyo) → chips 🏃 sur chaque fiche jour",
