@@ -75,6 +75,7 @@ const DAYS = [
   alerts:["📱 Antoine : basculer les données sur Ubigi dès l'atterrissage (B&You reste en itinérance coupée)",
           "🚆 Haruka ACHETÉ (résa 47763, ¥6 600, non réservé) → retrait OBLIGATOIRE avant de monter : borne verte ou guichet JR de la gare KIX, HORS portillons — Visa Premier d'Antoine + code 4 chiffres + les 4 passeports · si le guichet est fluide, prendre aussi les 2 ICOCA enfant","Instructions self check-in reçues la veille sur Airbnb (plan B : comptoir RESI STAY près de la gare)"]},
  {d:"2026-10-15", t:"Kyoto à vélo — temples de l'est 🚲", ph:"Kyoto", sleep:"kyoto", menu:true, prat:[...RUN_KYOTO],
+  alerts:["🅿️ Pas de parking vélos à la maison (réponse RESI STAY) : la nuit, Fruits Bicycle Parking à la gare Keihan Kiyomizu-Gojo (24h/24, ~¥100 les 24h) ou Kurutto Park à Gion-Shijo (24h/24, tarif sur place) — ne jamais laisser les vélos dans la ruelle"],
   plan:[{w:"matin",x:"Récupérer les vélos (+ sièges enfants) puis Nanzen-ji (le « gros temple »)", maps:"Nanzen-ji Kyoto"},
         {w:"midi",x:"Chemin de la philosophie à vélo, pique-nique au bord du canal", maps:"Philosopher's Path Kyoto"},
         {w:"aprèm",x:"Okazaki shrine — le sanctuaire aux lapins 🐇", maps:"Okazaki Shrine Kyoto"}]},
@@ -473,6 +474,6 @@ const PREDEP = [
   "⬇️ Google Maps hors-ligne (Kiso, Shirahone, Hakone, Izu) + Translate japonais",
   "✅ 🚆 Haruka KIX→Kyoto 14/10 acheté (résa 47763, ¥6 600, non réservé, Visa Premier) — le code à 4 chiffres : le connaître par cœur, Visa Premier + 4 passeports à portée de main à l'arrivée",
   "🧒 « こども ICOCA » enfant ×2 au guichet JR de la gare KIX (même guichet que le retrait Haruka ; passeports des filles, ¥2 000 chacune dont ¥500 de dépôt) — repli : billets enfant aux bornes Keihan/Hankyu les 18-19, puis guichet gare de Kyoto le 20/10 avant le Shinkansen",
-  "🚲 Vélos Kyoto : décision + résa après réponse RESI STAY (recherches/velos-kyoto.md)",
+  "🚲 Vélos Kyoto : RESI STAY ne loue pas de vélos et n'a pas de place à la maison → choix du loueur sur place le 14 au soir (recherches/velos-kyoto.md) · la nuit, parking vélos 24h gare Keihan Kiyomizu-Gojo (~¥100 les 24h)",
   "✅ 🏃 Itinéraires course : tous tracés dans Strava (Kyoto, Ena, Kawaguchiko, Hakone, Izu, Tokyo) → chips 🏃 sur chaque fiche jour",
 ];
