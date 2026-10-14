@@ -64,7 +64,7 @@ const DAYS = [
  {d:"2026-10-14", t:"Arrivée au Japon → Kyoto", ph:"Kyoto", sleep:"kyoto",
   prat:[{t:"✈️ "+PNR_A, copy:PNR_A},{t:"🚆 Haruka 47763", copy:"47763"},{t:"📱 Data → Ubigi", copy:"Settings → Mobile Service → Mobile Data → Ubigi"}],
   plan:[{w:"08:40",x:"CA927 Pékin → Osaka KIX (arrivée 12:40)"},
-        {w:"12:40",x:"📱 À l'atterrissage : Settings → Mobile Service → Mobile Data → Ubigi (puis Safari pour tester ; si rien : mode avion 10 s)"},
+        {w:"12:40",x:"📱 À l'atterrissage : Settings → Mobile Service → Mobile Data → Ubigi, puis DÉSACTIVER la ligne principale (B&You) — testé le 14/10, sans ça pas de data (puis Safari pour tester ; si rien : mode avion 10 s)"},
         {w:"~13:45",x:"Immigration + douane (kiosques intégrés, QR Visit Japan Web)"},
         {w:"étape 1",x:"💴 ATM Seven Bank (hall d'arrivée T1, 7-Eleven) : retirer ¥40 000 par carte Revolut (Antoine puis Emilie) — il faut du CASH pour les ICOCA"},
         {w:"étape 2",x:"🎫 Guichet JR (Ticket Office, gare Kansai-Airport, 2F passerelle) : (a) retrait Haruka — les 4 passeports + Visa Premier + code 4 chiffres ; (b) 2 × « kodomo ICOCA » (こども ICOCA) — passeports des filles, ¥2 000 chacune EN ESPÈCES (¥500 de caution + ¥1 500 de crédit, assez pour Kyoto ; recharge plus tard à Tokyo) ; (c) 🪪 ADULTES (transfert Wallet raté le 12/10) : sortir les 2 anciennes Suica physiques, lire le solde et charger ¥3 000 chacune EN ESPÈCES à la borne de recharge (チャージ) à côté du guichet — si une carte est refusée (expirée après 10 ans sans usage) : 2 ICOCA adulte au guichet, ¥2 000 chacune en espèces. Le guichet JR West ne fait ni transfert Wallet ni remboursement Suica. Si le guichet est bondé : Haruka à la borne verte à côté, ICOCA le 20 à Kyoto", maps:"Kansai-Airport Station"},
