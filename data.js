@@ -390,19 +390,19 @@ const FICHES = {
   dec:"✅ Décidé : console en France (Noël) · au Japon = 3 accessoires + 7 jeux Switch 2 / S2E — ~430 € vs ~765 € FR",
   arb:[
    "Console : NON au Japon (version JP verrouillée en japonais ; multilingue vendue en ligne JP seulement) → Black Friday en France.",
-   "Cible = jeux SWITCH 2 ou « Switch 2 Edition » (remasters). Cartouches Nintendo = multilingues, français inclus (vérifié). Réflexe : au dos de la boîte, 対応言語 contient フランス語. Pas de jeux tiers (Game-Key Card = carte vide + téléchargement).",
+   "Cible = jeux SWITCH 2 ou « Switch 2 Edition » (remasters). Jeux Nintendo/Pokémon japonais = multilingues, français inclus : vérifié le 15/10 sur les pages officielles (Kirby, Mario Party, Zelda, Z-A, Pokopia ; Wonder S2E très probable, le jeu de base l'a). Les boîtes japonaises n'affichent PAS les langues au dos : inutile de chercher. La mention « 日本語でのみ » ne vise que la console japonaise ; sur notre Switch 2 française, les jeux suivront la langue de la console. Pas de jeux tiers (Game-Key Card = carte vide + téléchargement).",
    "Tout ça ne se lance que sur la Switch 2 → ça attend Noël. Pokémon : on a déjà Let's Go Pikachu ; le dernier principal = Legends Z-A (S2E) ; Winds/Waves = 2027, rien à acheter.",
    "Accessoires : matériel mondial, Bluetooth, sans zone. La console n'a que 2 Joy-Con → une paire de plus pour jouer à 4. Écartés : volants, grip de charge, microSD, étui cartouches (inutiles).",
-   "Jeux en CARTOUCHE uniquement (un achat numérique est lié à un seul compte — leçon Let's Go). Pokopia : le prendre dès qu'on le voit (ruptures). Z-A : décision sur place." ],
+   "Jeux en CARTOUCHE de préférence (un achat numérique est lié à un seul compte — leçon Let's Go). Exception Pokopia : n'existe en boîte qu'en carte-clé (キーカード) — la licence est sur la carte, pas sur un compte : téléchargement unique (~10 Go, internet), puis jouable hors ligne carte insérée, et sur n'importe quelle console. Le prendre dès qu'on le voit (ruptures). Z-A : décision sur place." ],
   ou:"Nintendo KYOTO (Takashimaya S.C. 7F, Shijō-Kawaramachi — 15 min de l'Airbnb, tax-free ; idéal ven 16) · Nintendo TOKYO (Shibuya Parco 6F) · Bic / Yodobashi (rayon ゲーム, souvent −5-10 %) — tout le même jour, même magasin (≥ 5 000 ¥), passeport, avant le 31/10",
   cands:[
-   {m:"Joy-Con 2 — paire supplémentaire", s:"Indispensable pour jouer à 4 (Mario Kart, Mario Party, Switch Sports) · Switch 2 uniquement", jp:"~9 070 ¥", eur:"≈ 51 € hors taxe", fr:"FR : 89,99 €", v:"Panier", k:"ok"},
-   {m:"Pro Controller 2", s:"Confort Antoine / Zelda · marche DÈS MAINTENANT sur la Switch 1", jp:"~9 070 ¥", eur:"≈ 51 € hors taxe", fr:"FR : 89,99 € (promos ~70)", v:"Panier", k:"ok"},
+   {m:"Joy-Con 2 — paire supplémentaire", s:"Indispensable pour jouer à 4 (Mario Kart, Mario Party, Switch Sports) · Switch 2 uniquement · prendre la BOÎTE PAIRE (¥9 980 TTC) : à l'unité ¥5 480 chacun chez Yodobashi (15/10)", jp:"~9 070 ¥", eur:"≈ 51 € hors taxe", fr:"FR : 89,99 €", v:"Panier", k:"ok"},
+   {m:"Pro Controller 2", s:"Confort Antoine / Zelda · Switch 2 UNIQUEMENT (étiquette Yodobashi : « Nintendo Switchでは使用できません », ne marche pas sur la Switch 1) · ¥9 980 TTC = prix officiel, pas de promo (15/10)", jp:"~9 070 ¥", eur:"≈ 51 € hors taxe", fr:"FR : 89,99 € (promos ~70)", v:"Panier", k:"ok"},
    {m:"Set officiel pochette Switch 2 + film écran", s:"Rien n'est fourni avec la console · 6 emplacements cartouches · film moyen (verre tiers plus tard si besoin)", jp:"~2 710 ¥", eur:"≈ 15 € hors taxe", fr:"FR : ~39,99 €", v:"Panier", k:"ok"},
    {m:"Super Mario Bros. Wonder — Switch 2 Edition + Parc Bellabel", s:"1-4 sur un écran · Yoshi/Carottin invincibles = parfait pour Flora · prix JP à relever en rayon", jp:"~7 250 ¥ ?", eur:"≈ 41 € hors taxe (estimation)", fr:"FR : ~69,99 €", v:"Panier", k:"ok"},
    {m:"Kirby et le monde oublié — Switch 2 Edition", s:"1-2 · le jeu 3D le plus doux pour un premier jeu vidéo", jp:"~7 800 ¥", eur:"≈ 44 € hors taxe", fr:"FR : 79,99 €", v:"Panier", k:"ok"},
    {m:"Super Mario Party Jamboree — Switch 2 Edition + TV", s:"1-4 · plateau + 110 mini-jeux, soirées famille · le seul Mario Party Switch 2", jp:"~8 300 ¥", eur:"≈ 47 € hors taxe", fr:"FR : 79,99 €", v:"Panier", k:"ok"},
-   {m:"Pokémon Pokopia (cartouche)", s:"1 · « Animal Crossing avec des Pokémon », construction, très doux, idéal 6-9 ans · souvent en rupture : LE PRENDRE DÈS QU'ON LE VOIT", jp:"~8 160 ¥", eur:"≈ 46 € hors taxe", fr:"FR : 79,99 €", v:"Panier", k:"ok"},
+   {m:"Pokémon Pokopia (carte-clé キーカード)", s:"1 · « Animal Crossing avec des Pokémon », construction, très doux, idéal 6-9 ans · français inclus (site officiel) · boîte = carte-clé : téléchargement ~10 Go à Noël, ensuite hors ligne OK · souvent en rupture : LE PRENDRE DÈS QU'ON LE VOIT", jp:"~8 160 ¥", eur:"≈ 46 € hors taxe", fr:"FR : 79,99 €", v:"Panier", k:"ok"},
    {m:"Zelda: Breath of the Wild + Tears of the Kingdom — Switch 2 Edition", s:"1 · pour Antoine (Zélie en copilote) · 8 678 ¥ + 8 920 ¥", jp:"~16 000 ¥ les deux", eur:"≈ 45 € + 46 € hors taxe", fr:"FR : 79,99 € × 2", v:"Panier", k:"ok"},
    {m:"Pokémon Legends: Z-A — Switch 2 Edition", s:"1 · le dernier Pokémon principal (aucun natif Switch 2 avant Winds/Waves 2027) · Illumis, combats temps réel simplifiés, PEGI 7 · une sauvegarde par profil → une partie chacune", jp:"~7 390 ¥", eur:"≈ 42 € hors taxe", fr:"FR : 69,99-79,99 €", v:"Décision sur place", k:"mid"},
    {m:"Écartés : Mario Kart World · Animal Crossing S2E · Mario Galaxy 1+2 · volants · grip de charge · microSD · étui cartouches", s:"Raisons dans recherches/achats/switch-2-jeux-accessoires.md · 2e cercle si envie : DK Bananza, Yoshi, Mario Tennis Fever, Kirby Air Riders (41-46 €)", jpn:"—", fr:"", v:"Non", k:"no"},
@@ -414,15 +414,15 @@ const FICHES = {
    {id:"switch-buy-wonder", t:"🛒 Super Mario Bros. Wonder — Switch 2 Edition (relever le prix)"},
    {id:"switch-buy-kirby", t:"🛒 Kirby monde oublié — Switch 2 Edition"},
    {id:"switch-buy-party", t:"🛒 Mario Party Jamboree — Switch 2 Edition + TV"},
-   {id:"switch-buy-pokopia", t:"🛒 Pokémon Pokopia — cartouche (dès qu'on le voit, ruptures fréquentes)"},
+   {id:"switch-buy-pokopia", t:"🛒 Pokémon Pokopia — carte-clé, c'est normal (dès qu'on le voit, ruptures fréquentes)"},
    {id:"switch-buy-zelda", t:"🛒 Zelda Breath of the Wild — Switch 2 Edition"},
    {id:"switch-buy-zelda2", t:"🛒 Zelda Tears of the Kingdom — Switch 2 Edition"},
    {id:"switch-buy-za", t:"🛒 (à décider sur place) Pokémon Legends: Z-A — Switch 2 Edition"},
-   {id:"switch-langue", t:"Chaque jeu : au dos, 対応言語 contient フランス語 ; pas de ゲームキーカード"},
+   {id:"switch-langue", t:"Langues : rien d'écrit sur les boîtes japonaises, français vérifié en ligne pour tout le panier · pas de キーカード sauf Pokopia"},
    {id:"switch-grouper", t:"Tout le même jour dans le même magasin (≥ 5 000 ¥), passeport original, avant le 31/10"},
    {id:"switch-pas-console", t:"Pas de console japonaise, même en promo (verrouillée)"},
    {id:"switch-facture", t:"Garder les factures tax-free pour la douane"} ],
-  risk:"SAV Nintendo au Japon uniquement (risque faible). Les Switch 2 Edition attendront Noël ; les boîtes rouges se jouent dès le retour sur la Switch 1. Poids du panier ~1,2 kg. Étude : recherches/achats/switch-2-jeux-accessoires.md."
+  risk:"SAV Nintendo au Japon uniquement (risque faible). Tout le panier attendra Noël : jeux, Joy-Con 2 et Pro Controller 2 ne marchent que sur la Switch 2. Poids du panier ~1,2 kg. Étude : recherches/achats/switch-2-jeux-accessoires.md."
  }
 };
 const CODES = [
