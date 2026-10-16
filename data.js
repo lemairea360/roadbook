@@ -263,7 +263,7 @@ const ACHATS = [
   {id:"cartouche-chalana", t:"🖋️ Cartouches Sailor Chalana", who:"pour maman"},   // fiche détaillée → FICHES['cartouche-chalana']
   {id:"appareil-photo-flora", t:"📷 Appareil photo", who:"pour Flora"},   // fiche détaillée → FICHES['appareil-photo-flora']
   {id:"peluches-raplapla", t:"🧸 Peluches « raplapla » (Liv Heart, format Bolster)", who:"pour les filles"},   // fiche détaillée → FICHES['peluches-raplapla']
-  {id:"airtags", t:"🏷️ AirTags ×4 (pour les filles sur place)", who:"Antoine", where:"Apple Store Kyoto (Shijō, détaxe) · Bic Camera gare de Kyoto · Yodobashi", note:"Pack de 4 : ¥18 400 TTC, ~¥16 700 détaxé (~95 €, = revendeurs FR). Dès l'activation : Localiser → AirTag → Partager avec Emilie (sinon alertes « AirTag détecté »)"},
+  {id:"airtags", t:"🏷️ AirTags ×4 (pour les filles sur place)", who:"Antoine", where:"Yodobashi Kyoto (coin Apple, détaxe) · Apple Kyoto (Shijō) SANS détaxe (Apple Japon ne la fait plus) · Edion Kawaramachi : rupture le 16/10", note:"Pack de 4 : ¥18 400 TTC, ~¥16 700 détaxé (~95 €, = revendeurs FR) — chez Apple ~9 € de plus. Dès l'activation : Localiser → AirTag → Partager avec Emilie (sinon alertes « AirTag détecté »)"},
   {id:"cloche-ours", t:"🔔 Clochette à ours", who:"Antoine", where:"Daiso (~¥110-220, rayon outdoor) · Montbell Kyoto Shinkyōgoku (~¥1 500-2 500, avec silencieux)", note:"À prendre dès Kyoto — sert au Kasagi (20-21/10), à Shirahone (22/10) et au Kurodake (23/10)"},
   {id:"casque-sony", t:"Casque Sony WH-1000XM6", who:"Antoine", where:"Bic Camera / Yodobashi / Sony Store Ginza", note:"~¥59k TTC → ~¥54k HT ≈ 300 € vs ~450 € FR (−30 %) · modèle mondial, appli en français · l'alternative aux AirPods Max · avant le 31/10"},
 ];
