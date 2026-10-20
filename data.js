@@ -455,6 +455,13 @@ const INFOS = [
     "Cash indispensable : ryokan (taxe onsen), Tsumago/Magome, temples, petits restos, parkings à bornes, laveries",
     "Visa Premier = secours seulement (2,9 %) — son rôle : assurance médicale + rapatriement, valable sans avoir payé avec",
     "Retour : reconvertir les yens restants pendant l'essai, puis résilier les deux Premium (rappels mi-novembre)"]},
+  {h:"🅿️ Parkings (road trip 20→28/10)", list:[
+    "<b>Centre-ville = cher</b> (Nagoya : ¥200-250 / 20-30 min, soit ~¥2 000 pour 3 h). Dès 2 h, chercher un parking avec <b>最大料金</b> (plafond, souvent ¥1 000-1 500) : 300 m de marche = ¥500-800 économisés. Hors grandes villes : ¥100-200/h et beaucoup de gratuits",
+    "<b>Lire le panneau</b> : 最大料金 = plafond · 入庫後24時間 = 24 h glissantes (le mieux) · 当日24時まで = jusqu'à minuit seulement · 1回限り = une seule fois puis compteur · 平日/土日祝 = semaine/week-end (plafond parfois doublé) · 夜間 = tarif nuit · 軽専用 = kei uniquement · 満 = complet, 空 = libre",
+    "<b>Stratégie</b> : &lt; 1 h → n'importe quel coin parking (ou combini/supermarché gratuit) · 2-3 h → plafond ≤ ¥1 200 · demi-journée → parking du site (forfait ou gratuit) ou appli akippa · nuit → parking du logement",
+    "<b>Bornes</b> : taper le n° de place → 精算 → payer → partir dans les 2-3 min (la barre remonte). Garder ¥2 000 en pièces de ¥100 et billets de ¥1 000 : cartes et nouvelles pièces de ¥500 souvent refusées. Jamais sur une place 月極 (abonnés) ni 無断駐車禁止",
+    "<b>Tarifs du parcours</b> : Tsumago ¥500/jour (aucun gratuit) · Magome gratuit (sauf certains le week-end) · Matsumoto château : parking municipal Ōtemon 大手門 ¥150/30 min · Kawaguchiko téléphérique : gratuits alentour (à confirmer) · Oshino Hakkai ~¥300 · Hakone Open-Air Museum ¥500/3 h · Ōwakudani souvent plein, ¥530 forfait ou horaire plafonné ¥1 300 (sources contradictoires) → alternative gratuite : gare Ubako 姥子 (90 places) · Mishima Skywalk gratuit · Jōgasaki (Kadowaki) ¥500/jour · Mont Ōmuro gratuit · Shaboten ¥500 · Kawazu Nanadaru : gratuit près du pont en boucle, à confirmer",
+    "Applis : Google Maps (parkings sans prix) · NAVITIME ou 特P (prix + plafonds sur carte) · akippa (places privées à réserver, moitié prix)"]},
   {h:"💴 À ne pas oublier", list:["Cash : taxe onsen (¥150/pers = ¥600), bus Tsumago→Magome (horaires à vérifier la veille), parking Tsumago ~¥500",
     "Péages = carte ETC, soldés à la restitution Nihonbashi",
     "Permis FR + traduction JAF + passeports → sur soi le 20/10",
