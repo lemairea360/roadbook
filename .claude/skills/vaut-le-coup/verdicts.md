@@ -5,3 +5,4 @@
 | 23/10/2026 | Oakley (Gotemba) | 🟡 | ~30-40 % vs catalogue FR si étiquette outlet ≈ −30 %, ~10-15 % vs promo FR | Holbrook ¥28 710 TTC Japon = 161 € ; seuil outlet ≤ ¥21 000 |
 | 23/10/2026 | graniph (Gotemba) | 🟢 | pas vendu en France ; ~16-18 € un T-shirt adulte, ~11-13 € enfant, détaxe incluse | adulte ¥2 900-3 500, enfant ¥1 900-2 500 TTC ; app membre −10 % dès ¥5 500 |
 | 23/10/2026 | Skechers (Gotemba) | 🟢 surtout enfants | ~20-40 % vs catalogue FR, ~10-25 % vs promo FR ; prix JP officiels non confirmés, règle ¥÷200 = € payé | seuils : adulte ≤ ¥9 000, enfant ≤ ¥5 000 ; FR enfant 35-50 €, adulte Go Walk/D'Lites 80-90 € catalogue, 55-65 € promo |
+| 23/10/2026 | Tommy Hilfiger (Gotemba) | 🟡 | plein tarif JP ≈ promo FR (Zalando −50 % permanent) ; gain réel seulement si étiquette outlet ≤ −40 % | polo adulte JP ¥13 200 = 67 € payé vs 90 € cat. FR / 60-70 € promo ; seuils : polo adulte ≤ ¥9 000, sweat adulte ≤ ¥12 000, polo enfant ≤ ¥4 500, sweat enfant ≤ ¥6 000 |
